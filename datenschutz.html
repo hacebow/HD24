@@ -1,15 +1,22 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-AT">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Datenschutzerklärung der HD 24 Elektrotechnik e.U. nach EU-DSGVO, DSG und TKG 2021.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description" content="Datenschutzerklärung der HD 24 Elektrotechnik e.U. nach EU-DSGVO, DSG und TKG 2021. Information über Cookies und Datenverarbeitung.">
     <title>Datenschutzerklärung | HD 24 Elektrotechnik e.U.</title>
     
-    <!-- Favicon & Mobil İkonlar -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Favicon & Mobile Icons (Google Search & Tüm Cihazlar İçin Tam Uyumlu) -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="logo.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="logo.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <meta name="msapplication-TileImage" content="logo.png">
+    <meta name="theme-color" content="#d90429">
 
+    <!-- Performance Vorabverbindungen & Stile -->
     <link rel="preconnect" href="https://unpkg.com">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -27,13 +34,15 @@
             --text-dark: #212529;
             --text-muted: #495057;
             --border-color: #dee2e6;
+            --container-max: 1240px;
         }
 
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Tahoma', Geneva, sans-serif !important;
+            -webkit-tap-highlight-color: transparent;
         }
 
         a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
@@ -41,7 +50,7 @@
             outline-offset: 2px;
         }
 
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 
         body {
             background-color: var(--bg-light);
@@ -49,8 +58,15 @@
             line-height: 1.6;
             padding-bottom: 70px;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
         }
 
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* 1. Notdienst-Kopfzeile */
         .emergency-topbar {
             background-color: #0d0f12;
             color: var(--white);
@@ -63,7 +79,8 @@
             border-bottom: 3px solid var(--primary-red);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 12px;
+            width: 100%;
         }
 
         .emergency-status {
@@ -79,22 +96,18 @@
             background-color: #00f5d4;
             border-radius: 50%;
             display: inline-block;
-            box-shadow: 0 0 12px #00f5d4;
-            animation: pulseGreen 1.3s infinite;
+            box-shadow: 0 0 14px #00f5d4, 0 0 24px rgba(0, 245, 212, 0.6);
+            animation: pulseGreen 1.3s infinite ease-in-out;
+            flex-shrink: 0;
         }
 
         @keyframes pulseGreen {
-            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
-            50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 18px #00f5d4; }
-            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 6px #00f5d4; }
+            50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 20px #00f5d4, 0 0 30px rgba(0,245,212,0.8); }
+            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 6px #00f5d4; }
         }
 
-        .topbar-contacts {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        .topbar-contacts { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
         .topbar-btn {
             color: #ffffff;
@@ -104,11 +117,11 @@
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 6px 12px;
+            padding: 6px 14px;
             background: rgba(255, 255, 255, 0.08);
             border-radius: 6px;
             border: 1px solid rgba(255, 255, 255, 0.16);
-            transition: all 0.25s ease;
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .topbar-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
@@ -131,6 +144,7 @@
             color: #ff6b6b;
         }
 
+        /* 2. Hauptnavigation */
         nav {
             background-color: var(--white);
             padding: 12px 5%;
@@ -142,6 +156,7 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
             border-bottom: 2px solid var(--border-color);
+            width: 100%;
         }
 
         .brand-logo img {
@@ -153,16 +168,13 @@
 
         .brand-logo:hover img { transform: scale(1.03); }
 
-        .nav-links {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            list-style: none;
-        }
+        .nav-right-container { display: flex; align-items: center; gap: 12px; }
+
+        .nav-links { display: flex; gap: 4px; align-items: center; list-style: none; }
 
         .nav-link {
             text-decoration: none;
-            padding: 8px 12px;
+            padding: 8px 10px;
             font-size: 14px;
             font-weight: 700;
             color: var(--text-dark);
@@ -175,10 +187,29 @@
             color: var(--primary-red);
             background-color: rgba(217, 4, 41, 0.06);
         }
-
+        
         .nav-link.active-link {
             border-bottom: 2px solid var(--primary-red);
         }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-dark));
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta svg { width: 15px; height: 15px; fill: currentColor; }
 
         .mobile-menu-toggle {
             display: none;
@@ -199,11 +230,12 @@
             border-radius: 2px;
         }
 
+        /* 3. Sayfa Başlığı */
         .page-header {
             background: linear-gradient(135deg, rgba(11, 9, 10, 0.9), rgba(21, 25, 28, 0.95)), 
                         url('viyanaart.jpg') no-repeat center center/cover;
             color: var(--white);
-            padding: 60px 8%;
+            padding: 65px 8%;
             text-align: center;
             border-bottom: 4px solid var(--primary-red);
         }
@@ -212,18 +244,20 @@
             font-size: 38px;
             font-weight: bold;
             margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
 
         .page-header p {
-            font-size: 16px;
+            font-size: 16.5px;
             color: #e9ecef;
             max-width: 750px;
             margin: 0 auto;
         }
 
+        /* 4. Datenschutz İçerik */
         .section-wrap {
             padding: 65px 6%;
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
@@ -237,55 +271,65 @@
         }
 
         .datenschutz-wrapper h3 {
-            font-size: 18px;
+            font-size: 18.5px;
             font-weight: bold;
             color: var(--primary-dark);
-            margin-top: 25px;
-            margin-bottom: 10px;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-bottom: 1px solid var(--bg-light);
+            padding-bottom: 8px;
         }
 
         .datenschutz-wrapper p, .datenschutz-wrapper li {
             font-size: 14.5px;
             color: var(--text-dark);
             line-height: 1.7;
+            margin-bottom: 14px;
         }
 
         .datenschutz-wrapper ul {
             padding-left: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .datenschutz-box {
             background: #f8f9fa;
-            padding: 16px 20px;
-            border-radius: 8px;
+            padding: 20px;
+            border-radius: 10px;
             border-left: 4px solid var(--energy-yellow);
-            margin: 15px 0;
-            font-size: 14px;
+            margin: 20px 0;
+            font-size: 14.5px;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
         .accessibility-statement {
             background-color: #e9ecef;
-            padding: 22px 6%;
+            padding: 24px 6%;
             font-size: 13.5px;
             color: var(--text-muted);
             border-top: 1px solid var(--border-color);
-            line-height: 1.6;
+            width: 100%;
+            text-align: center;
         }
 
+        /* 5. Footer */
         footer {
             background-color: var(--footer-bg);
             color: #ced4da;
             padding: 70px 6% 30px;
             font-size: 14.5px;
             border-top: 4px solid var(--primary-red);
+            width: 100%;
         }
 
         .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 35px;
-            margin-bottom: 45px;
+            max-width: var(--container-max);
+            margin: 0 auto 45px;
+            width: 100%;
         }
 
         .footer-logo-box {
@@ -294,16 +338,10 @@
             border-radius: 12px;
             display: inline-block;
             margin-bottom: 14px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
             border: 2px solid var(--primary-red);
         }
 
-        .footer-logo-box img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
-            display: block;
-        }
+        .footer-logo-box img { height: 48px; width: auto; object-fit: contain; }
 
         .footer-col h5 {
             color: var(--white);
@@ -319,17 +357,17 @@
             text-decoration: none;
             display: block;
             margin-bottom: 10px;
+            transition: color 0.2s;
         }
 
-        .footer-col a:hover {
-            color: var(--primary-red);
-            text-decoration: underline;
-        }
+        .footer-col a:hover { color: var(--primary-red); text-decoration: underline; }
 
-        .footer-phone-link {
-            color: var(--energy-yellow) !important;
-            font-size: 18px;
-            font-weight: bold;
+        .footer-phone-link { 
+            color: var(--energy-yellow) !important; 
+            font-size: 18px; 
+            font-weight: bold; 
+            word-break: break-all;
+            text-shadow: 0 0 10px rgba(255, 183, 3, 0.4); 
         }
 
         .footer-whatsapp-btn {
@@ -341,7 +379,12 @@
             padding: 10px 18px;
             border-radius: 8px;
             font-weight: bold;
-            margin-top: 6px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+            transition: transform 0.2s ease;
+        }
+
+        .footer-whatsapp-btn:hover {
+            transform: translateY(-2px);
         }
 
         .footer-badge {
@@ -362,43 +405,48 @@
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 13.5px;
             color: #adb5bd;
+            max-width: var(--container-max);
+            margin: 0 auto;
         }
 
+        /* Responsive Medienabfragen */
+        @media (max-width: 1100px) { 
+            .footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
         @media (max-width: 920px) {
             .mobile-menu-toggle { display: flex; }
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
+                top: 100%; left: 0; width: 100%;
                 background-color: #ffffff;
                 flex-direction: column;
                 padding: 15px 0;
                 box-shadow: 0 15px 25px rgba(0,0,0,0.1);
                 border-bottom: 3px solid var(--primary-red);
-                gap: 0;
             }
             .nav-links.active { display: flex; }
-            .nav-link {
-                width: 100%;
-                padding: 14px 25px;
-                font-size: 16px;
-                border-bottom: 1px solid #f1f3f5;
-            }
+            .nav-link { width: 100%; padding: 14px 25px; font-size: 16px; border-bottom: 1px solid #f1f3f5; }
         }
-
+        @media (max-width: 768px) { 
+            .footer-grid { grid-template-columns: 1fr; }
+            .section-wrap { padding: 50px 4.5%; }
+            .datenschutz-wrapper { padding: 30px 20px; }
+        }
         @media (max-width: 600px) {
-            .emergency-topbar { flex-direction: column; text-align: center; }
-            .topbar-contacts { justify-content: center; }
+            .emergency-topbar { flex-direction: column; text-align: center; padding: 10px 4%; }
+            .topbar-contacts { justify-content: center; width: 100%; }
+            .topbar-btn { font-size: 12px; padding: 6px 10px; }
+            .brand-logo img { height: 42px; }
+            .nav-cta { padding: 8px 12px; font-size: 12px; }
             .page-header h1 { font-size: 28px; }
-            .datenschutz-wrapper { padding: 25px 20px; }
         }
     </style>
 </head>
 <body>
 
-    <div class="emergency-topbar" role="region" aria-label="Notdienst Info">
+    <!-- 1. Notdienst Infozeile -->
+    <div class="emergency-topbar" role="region" aria-label="Notdienst Info" data-aos="fade-down">
         <div class="emergency-status">
             <span class="status-dot" aria-hidden="true"></span>
             <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
@@ -416,32 +464,43 @@
         </div>
     </div>
 
-    <nav aria-label="Hauptnavigation">
+    <!-- 2. Hauptnavigation -->
+    <nav aria-label="Hauptnavigation" data-aos="fade-down" data-aos-delay="100">
         <a href="index.html" class="brand-logo" aria-label="HD 24 Elektrotechnik Startseite">
             <img src="logo.png" alt="HD 24 Elektrotechnik Logo">
         </a>
-        <div class="nav-links" id="navLinks">
-            <a href="index.html" class="nav-link">Startseite</a>
-            <a href="index.html#services" class="nav-link">Leistungen</a>
-            <a href="index.html#areas" class="nav-link">Einsatzgebiete</a>
-            <a href="index.html#guide" class="nav-link">Kunden-Hilfe</a>
-            <a href="index.html#about" class="nav-link">Über uns</a>
-            <a href="impressum.html" class="nav-link">Impressum</a>
-            <a href="datenschutz.html" class="nav-link active-link">Datenschutz</a>
-            <a href="kontakt.html" class="nav-link">Kontakt</a>
+        <div class="nav-right-container">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Startseite</a>
+                <a href="index.html#services" class="nav-link">Leistungen</a>
+                <a href="index.html#areas" class="nav-link">Einsatzgebiete</a>
+                <a href="index.html#guide" class="nav-link">Kunden-Hilfe</a>
+                <a href="index.html#about" class="nav-link">Über uns</a>
+                <a href="impressum.html" class="nav-link">Impressum</a>
+                <a href="datenschutz.html" class="nav-link active-link">Datenschutz</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </div>
+            
+            <a href="kontakt.html" class="nav-cta">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                24/7 Erreichbar
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menü öffnen und schließen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menü öffnen/schließen">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
     </nav>
 
-    <div class="page-header" role="banner">
+    <!-- 3. Sayfa Başlığı -->
+    <div class="page-header" role="banner" data-aos="fade-in">
         <h1>Datenschutzerklärung</h1>
         <p>Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß EU-DSGVO, DSG und TKG 2021.</p>
     </div>
 
+    <!-- 4. Datenschutz İçerik -->
     <section class="section-wrap" role="region" aria-label="Datenschutz Hinweise">
         <div class="datenschutz-wrapper" data-aos="fade-up">
             <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (EU-Datenschutz-Grundverordnung <strong>DSGVO</strong>, Datenschutzgesetz <strong>DSG</strong> sowie Telekommunikationsgesetz <strong>TKG 2021</strong>).</p>
@@ -455,18 +514,20 @@
             </div>
 
             <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
-            <p><strong>a) Server-Logfiles:</strong> Beim Aufrufen unserer Website werden automatisch technische Verbindungsdaten (IP-Adresse, Datum, Uhrzeit, abgerufene Dateien, Browsertyp) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Stabilität und Sicherheit der Website).</p>
-            <p><strong>b) Kontaktaufnahme (Telefon, E-Mail):</strong> Wenn Sie per E-Mail oder telefonisch Kontakt mit uns aufnehmen, werden Ihre Daten zwecks Bearbeitung der Anfrage und allfälliger Folgefragen gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).</p>
-            <p><strong>c) WhatsApp:</strong> Durch das Anklicken des WhatsApp-Buttons treten Sie direkt mit uns über die Plattform WhatsApp (WhatsApp Ireland Limited) in Verbindung. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung durch aktives Starten).</p>
+            <p><strong>a) Server-Logfiles:</strong> Beim Aufrufen unserer Website werden automatisch technische Verbindungsdaten (IP-Adresse, Datum, Uhrzeit, abgerufene Dateien, Browsertyp) durch unseren Hosting-Provider verarbeitet. Dies ist technisch notwendig, um die Website fehlerfrei ausliefern zu können. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Stabilität und Sicherheit der Website).</p>
+            <p><strong>b) Kontaktaufnahme (Telefon, E-Mail):</strong> Wenn Sie per E-Mail oder telefonisch Kontakt mit uns aufnehmen, werden Ihre angegebenen Daten zwecks Bearbeitung der Anfrage und für allfällige Anschlussfragen bei uns gespeichert. Wir geben diese Daten nicht ohne Ihre Einwilligung weiter. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).</p>
+            <p><strong>c) WhatsApp Kommunikation:</strong> Durch das Anklicken des WhatsApp-Buttons treten Sie direkt mit uns über die Plattform WhatsApp (WhatsApp Ireland Limited) in Verbindung. Hierbei gelten die Datenschutzbestimmungen von WhatsApp. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung durch aktives Starten des Chats).</p>
 
-            <h3>3. Cookies & Externe Bibliotheken</h3>
-            <p>Diese Website verwendet ausschließlich technisch notwendige Funktionen. Auf zustimmungspflichtige Analyse- und Marketing-Cookies wird verzichtet. Zur visuellen Einbindung flüssiger Scroll-Animationen nutzen wir das Skript <strong>AOS (Animate On Scroll)</strong> über das Content Delivery Network (unpkg.com). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+            <h3>3. Verzicht auf Cookies (Cookie-freier Betrieb)</h3>
+            <p>Diese Website ist so konzipiert, dass <strong>keine zustimmungspflichtigen Analyse-, Tracking- oder Marketing-Cookies</strong> auf Ihrem Endgerät gespeichert werden. Wir verzichten vollständig auf den Einsatz von Google Analytics, Meta-Pixeln oder ähnlichen Tracking-Diensten, um Ihre Privatsphäre bestmöglich zu schützen.</p>
+            <p>Zur visuellen Einbindung flüssiger Scroll-Animationen nutzen wir das Skript <strong>AOS (Animate On Scroll)</strong> über das Content Delivery Network (unpkg.com). Dabei können systembedingt Verbindungsdaten (IP-Adresse) an den Server des Anbieters übertragen werden. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung unserer Dienstleistungen).</p>
 
             <h3>4. Speicherdauer & Ihre Rechte</h3>
-            <p>Wir speichern personenbezogene Daten nur so lange, wie es zur Erfüllung der Zwecke notwendig ist oder gesetzliche Aufbewahrungspflichten (z. B. 7 Jahre nach § 132 BAO) bestehen. Ihnen stehen grundsätzlich die Rechte auf <strong>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerruf</strong> zu.</p>
+            <p>Wir speichern personenbezogene Daten nur so lange, wie es zur Erfüllung der Zwecke notwendig ist oder gesetzliche Aufbewahrungspflichten (z. B. 7 Jahre nach § 132 BAO für Rechnungen und steuerrelevante Dokumente) bestehen.</p>
+            <p>Ihnen stehen grundsätzlich die Rechte auf <strong>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerruf und Widerspruch</strong> zu. Wenn Sie glauben, dass die Verarbeitung Ihrer Daten gegen das Datenschutzrecht verstößt, bitten wir Sie, uns direkt zu kontaktieren, um das Anliegen zu klären.</p>
 
             <h3>5. Beschwerderecht</h3>
-            <p>Zuständige Aufsichtsbehörde für Datenschutzbeschwerden in Österreich:</p>
+            <p>Darüber hinaus haben Sie das Recht, sich bei der zuständigen Aufsichtsbehörde in Österreich zu beschweren:</p>
             <div class="datenschutz-box">
                 <strong>Österreichische Datenschutzbehörde (DSB)</strong><br>
                 Barichgasse 40–42, 1030 Wien<br>
@@ -475,30 +536,23 @@
         </div>
     </section>
 
+    <!-- Barrierefreiheit -->
     <div class="accessibility-statement">
         <h4>Erklärung zur Barrierefreiheit</h4>
         <p>HD 24 Elektrotechnik ist bemüht, ihre Website in Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2019/882 barrierefrei zugänglich zu machen (BITV 2.0).</p>
     </div>
 
+    <!-- 8. FUSSZEILE -->
     <footer role="contentinfo">
         <div class="footer-grid">
             <div class="footer-col">
                 <h5>Direktkontakt</h5>
-                <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">24h Service-Bereitschaft</p>
+                <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">Service-Bereitschaft</p>
                 <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
                 <a href="mailto:office@hd-24.at" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
                 <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
                     💬 WhatsApp Chat starten
                 </a>
-            </div>
-
-            <div class="footer-col">
-                <h5>WKO & Rechtliches</h5>
-                <p>Meisterbetrieb</p>
-                <p>Mitglied der WKO Wien</p>
-                <p>Landesinnung Elektrotechnik</p>
-                <p><a href="impressum.html" style="color: #adb5bd;">Impressum ansehen</a></p>
-                <p><a href="datenschutz.html" style="color: #adb5bd;">Datenschutzerklärung</a></p>
             </div>
 
             <div class="footer-col">
@@ -514,6 +568,13 @@
             </div>
 
             <div class="footer-col">
+                <h5>WKO & Rechtliches</h5>
+                <a href="https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024" target="_blank" rel="noopener noreferrer">Mitglied der WKO Wien</a>
+                <a href="impressum.html" style="margin-top: 8px;">Impressum ansehen</a>
+                <a href="datenschutz.html">Datenschutzerklärung</a>
+            </div>
+
+            <div class="footer-col">
                 <div class="footer-logo-box">
                     <a href="index.html" aria-label="Zur Startseite"><img src="logo.png" alt="HD 24 Logo"></a>
                 </div>
@@ -526,14 +587,24 @@
         </div>
     </footer>
 
+    <!-- Skripte für Animationen & mobiles Menü -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true, offset: 100 });
+        AOS.init({ duration: 750, once: true, offset: 60 });
+
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const navLinks = document.getElementById('navLinks');
+
         if (mobileMenuBtn && navLinks) {
-            mobileMenuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
-            navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); }); });
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
         }
     </script>
 </body>
