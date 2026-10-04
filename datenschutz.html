@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Datenschutzerklärung der HD 24 Elektrotechnik e.U. nach EU-DSGVO, DSG und TKG 2021.">
+    <title>Datenschutzerklärung | HD 24 Elektrotechnik e.U.</title>
+    
+    <!-- Favicon & Mobil İkonlar -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-red: #d90429;
+            --primary-dark: #8d0801;
+            --black: #0b090a;
+            --footer-bg: #161a1d;
+            --card-bg: #ffffff;
+            --energy-yellow: #ffb703;
+            --whatsapp-green: #25d366;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-muted: #495057;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', Geneva, sans-serif !important;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--energy-yellow) !important;
+            outline-offset: 2px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 70px;
+            overflow-x: hidden;
+        }
+
+        .emergency-topbar {
+            background-color: #0d0f12;
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 3px solid var(--primary-red);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #00f5d4;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 12px #00f5d4;
+            animation: pulseGreen 1.3s infinite;
+        }
+
+        @keyframes pulseGreen {
+            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+            50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 18px #00f5d4; }
+            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+        }
+
+        .topbar-contacts {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topbar-btn {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transition: all 0.25s ease;
+        }
+
+        .topbar-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+        .topbar-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .topbar-btn.whatsapp-btn {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25d366;
+        }
+
+        .topbar-btn.phone-btn {
+            background: rgba(217, 4, 41, 0.15);
+            border-color: rgba(217, 4, 41, 0.4);
+            color: #ff6b6b;
+        }
+
+        nav {
+            background-color: var(--white);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .brand-logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .brand-logo:hover img { transform: scale(1.03); }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active-link {
+            color: var(--primary-red);
+            background-color: rgba(217, 4, 41, 0.06);
+        }
+
+        .nav-link.active-link {
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2.5px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, rgba(11, 9, 10, 0.9), rgba(21, 25, 28, 0.95)), 
+                        url('viyanaart.jpg') no-repeat center center/cover;
+            color: var(--white);
+            padding: 60px 8%;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            color: #e9ecef;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .section-wrap {
+            padding: 65px 6%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .datenschutz-wrapper {
+            background: var(--white);
+            border-radius: 18px;
+            padding: 45px 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+            border: 1px solid var(--border-color);
+            border-top: 6px solid var(--primary-red);
+        }
+
+        .datenschutz-wrapper h3 {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--primary-dark);
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .datenschutz-wrapper p, .datenschutz-wrapper li {
+            font-size: 14.5px;
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+
+        .datenschutz-wrapper ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .datenschutz-box {
+            background: #f8f9fa;
+            padding: 16px 20px;
+            border-radius: 8px;
+            border-left: 4px solid var(--energy-yellow);
+            margin: 15px 0;
+            font-size: 14px;
+        }
+
+        .accessibility-statement {
+            background-color: #e9ecef;
+            padding: 22px 6%;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: #ced4da;
+            padding: 70px 6% 30px;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+
+        .footer-logo-box {
+            background: #ffffff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 2px solid var(--primary-red);
+        }
+
+        .footer-logo-box img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 17.5px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 6px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #ced4da;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        .footer-phone-link {
+            color: var(--energy-yellow) !important;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--whatsapp-green);
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 6px;
+        }
+
+        .footer-badge {
+            display: inline-block;
+            background: rgba(217, 4, 4, 0.15);
+            color: #ff8787;
+            border: 1px solid rgba(217, 4, 4, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13.5px;
+            color: #adb5bd;
+        }
+
+        @media (max-width: 920px) {
+            .mobile-menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                flex-direction: column;
+                padding: 15px 0;
+                box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+                border-bottom: 3px solid var(--primary-red);
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-link {
+                width: 100%;
+                padding: 14px 25px;
+                font-size: 16px;
+                border-bottom: 1px solid #f1f3f5;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .emergency-topbar { flex-direction: column; text-align: center; }
+            .topbar-contacts { justify-content: center; }
+            .page-header h1 { font-size: 28px; }
+            .datenschutz-wrapper { padding: 25px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="emergency-topbar" role="region" aria-label="Notdienst Info">
+        <div class="emergency-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
+        </div>
+        <div class="topbar-contacts">
+            <a href="https://wa.me/436645277706" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
+                WhatsApp
+            </a>
+            <a href="mailto:office@hd-24.at" class="topbar-btn" aria-label="E-Mail senden an office@hd-24.at">
+                office@hd-24.at
+            </a>
+            <a href="tel:+436645277706" class="topbar-btn phone-btn" aria-label="Telefonnummer anrufen: +43 664 5277706">
+                +43 664 5277706
+            </a>
+        </div>
+    </div>
+
+    <nav aria-label="Hauptnavigation">
+        <a href="index.html" class="brand-logo" aria-label="HD 24 Elektrotechnik Startseite">
+            <img src="logo.png" alt="HD 24 Elektrotechnik Logo">
+        </a>
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Startseite</a>
+            <a href="index.html#services" class="nav-link">Leistungen</a>
+            <a href="index.html#areas" class="nav-link">Einsatzgebiete</a>
+            <a href="index.html#guide" class="nav-link">Kunden-Hilfe</a>
+            <a href="index.html#about" class="nav-link">Über uns</a>
+            <a href="impressum.html" class="nav-link">Impressum</a>
+            <a href="datenschutz.html" class="nav-link active-link">Datenschutz</a>
+            <a href="kontakt.html" class="nav-link">Kontakt</a>
+        </div>
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menü öffnen/schließen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="page-header" role="banner">
+        <h1>Datenschutzerklärung</h1>
+        <p>Informationen zur Verarbeitung Ihrer personenbezogenen Daten gemäß EU-DSGVO, DSG und TKG 2021.</p>
+    </div>
+
+    <section class="section-wrap" role="region" aria-label="Datenschutz Hinweise">
+        <div class="datenschutz-wrapper" data-aos="fade-up">
+            <p>Der Schutz Ihrer persönlichen Daten ist uns ein besonderes Anliegen. Wir verarbeiten Ihre Daten daher ausschließlich auf Grundlage der gesetzlichen Bestimmungen (EU-Datenschutz-Grundverordnung <strong>DSGVO</strong>, Datenschutzgesetz <strong>DSG</strong> sowie Telekommunikationsgesetz <strong>TKG 2021</strong>).</p>
+
+            <h3>1. Verantwortliche Stelle</h3>
+            <div class="datenschutz-box">
+                <strong>HD 24 Elektrotechnik e.U.</strong><br>
+                Inhaber: Yunus Nazli<br>
+                Marischkapromenade 11/2/6, 1210 Wien, Österreich<br>
+                Telefon: +43 664 5277706 | E-Mail: office@hd-24.at
+            </div>
+
+            <h3>2. Erhebung und Verarbeitung personenbezogener Daten</h3>
+            <p><strong>a) Server-Logfiles:</strong> Beim Aufrufen unserer Website werden automatisch technische Verbindungsdaten (IP-Adresse, Datum, Uhrzeit, abgerufene Dateien, Browsertyp) verarbeitet. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Stabilität und Sicherheit der Website).</p>
+            <p><strong>b) Kontaktaufnahme (Telefon, E-Mail):</strong> Wenn Sie per E-Mail oder telefonisch Kontakt mit uns aufnehmen, werden Ihre Daten zwecks Bearbeitung der Anfrage und allfälliger Folgefragen gespeichert. Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).</p>
+            <p><strong>c) WhatsApp:</strong> Durch das Anklicken des WhatsApp-Buttons treten Sie direkt mit uns über die Plattform WhatsApp (WhatsApp Ireland Limited) in Verbindung. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung durch aktives Starten).</p>
+
+            <h3>3. Cookies & Externe Bibliotheken</h3>
+            <p>Diese Website verwendet ausschließlich technisch notwendige Funktionen. Auf zustimmungspflichtige Analyse- und Marketing-Cookies wird verzichtet. Zur visuellen Einbindung flüssiger Scroll-Animationen nutzen wir das Skript <strong>AOS (Animate On Scroll)</strong> über das Content Delivery Network (unpkg.com). Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p>
+
+            <h3>4. Speicherdauer & Ihre Rechte</h3>
+            <p>Wir speichern personenbezogene Daten nur so lange, wie es zur Erfüllung der Zwecke notwendig ist oder gesetzliche Aufbewahrungspflichten (z. B. 7 Jahre nach § 132 BAO) bestehen. Ihnen stehen grundsätzlich die Rechte auf <strong>Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerruf</strong> zu.</p>
+
+            <h3>5. Beschwerderecht</h3>
+            <p>Zuständige Aufsichtsbehörde für Datenschutzbeschwerden in Österreich:</p>
+            <div class="datenschutz-box">
+                <strong>Österreichische Datenschutzbehörde (DSB)</strong><br>
+                Barichgasse 40–42, 1030 Wien<br>
+                Telefon: +43 1 52 152-0 | E-Mail: dsb@dsb.gv.at | Web: www.dsb.gv.at
+            </div>
+        </div>
+    </section>
+
+    <div class="accessibility-statement">
+        <h4>Erklärung zur Barrierefreiheit</h4>
+        <p>HD 24 Elektrotechnik ist bemüht, ihre Website in Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2019/882 barrierefrei zugänglich zu machen (BITV 2.0).</p>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Direktkontakt</h5>
+                <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">24h Service-Bereitschaft</p>
+                <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
+                <a href="mailto:office@hd-24.at" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
+                <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
+                    💬 WhatsApp Chat starten
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h5>WKO & Rechtliches</h5>
+                <p>Meisterbetrieb</p>
+                <p>Mitglied der WKO Wien</p>
+                <p>Landesinnung Elektrotechnik</p>
+                <p><a href="impressum.html" style="color: #adb5bd;">Impressum ansehen</a></p>
+                <p><a href="datenschutz.html" style="color: #adb5bd;">Datenschutzerklärung</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h5>Schnellzugriff</h5>
+                <a href="index.html">Startseite</a>
+                <a href="index.html#services">Leistungen</a>
+                <a href="index.html#areas">Einsatzgebiete</a>
+                <a href="index.html#guide">Kunden-Hilfe</a>
+                <a href="index.html#about">Über uns</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-logo-box">
+                    <a href="index.html" aria-label="Zur Startseite"><img src="logo.png" alt="HD 24 Logo"></a>
+                </div>
+                <p style="font-size: 14px; margin-top: 8px;">Ihr zertifizierter Meisterbetrieb für Elektrotechnik in Wien, NÖ & Burgenland.</p>
+                <span class="footer-badge">Zertifizierter Meisterbetrieb</span>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 HD 24 Elektrotechnik e.U. Alle Rechte vorbehalten. Erstellt nach ÖVE-Standards, DSGVO und BITV 2.0.
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+            navLinks.querySelectorAll('a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); }); });
+        }
+    </script>
+</body>
+</html>

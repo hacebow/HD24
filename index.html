@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="HD 24 Elektrotechnik e.U. - Ihr zertifizierter Meisterbetrieb für Wien, Niederösterreich & Burgenland. Elektroinstallationen, KNX Smart Home, Sprechanlagen, E-Befund nach ÖVE-Standards.">
+    <title>HD 24 Elektrotechnik e.U. | Ihr Meisterbetrieb für Wien, NÖ & Burgenland</title>
+    
+    <!-- Favicon & Mobil İkonlar -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- Performans Ön Yüklemeleri -->
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-red: #d90429;
+            --primary-dark: #8d0801;
+            --black: #0b090a;
+            --footer-bg: #161a1d;
+            --card-bg: #ffffff;
+            --energy-yellow: #ffb703;
+            --neon-green: #00f5d4;
+            --whatsapp-green: #25d366;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-muted: #495057;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', Geneva, sans-serif !important;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--energy-yellow) !important;
+            outline-offset: 2px;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 70px;
+            overflow-x: hidden;
+        }
+
+        /* 1. Üst Bilgi Bandı */
+        .emergency-topbar {
+            background-color: #0d0f12;
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 3px solid var(--primary-red);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #00f5d4;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 12px #00f5d4;
+            animation: pulseGreen 1.3s infinite;
+        }
+
+        @keyframes pulseGreen {
+            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+            50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 18px #00f5d4; }
+            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+        }
+
+        .topbar-contacts {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topbar-btn {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transition: all 0.25s ease;
+        }
+
+        .topbar-btn svg { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+
+        .topbar-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .topbar-btn.whatsapp-btn {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25d366;
+        }
+
+        .topbar-btn.phone-btn {
+            background: rgba(217, 4, 41, 0.15);
+            border-color: rgba(217, 4, 41, 0.4);
+            color: #ff6b6b;
+        }
+
+        /* 2. Navigasyon */
+        nav {
+            background-color: var(--white);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .brand-logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .brand-logo:hover img { transform: scale(1.03); }
+
+        .nav-right-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 4px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            padding: 8px 10px;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+            background-color: rgba(217, 4, 41, 0.06);
+        }
+
+        .nav-cta {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-dark));
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(217, 4, 41, 0.35);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            transition: all 0.25s ease;
+        }
+
+        .nav-cta svg { width: 15px; height: 15px; fill: currentColor; }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2.5px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+        }
+
+        .hero-banner {
+            min-height: 82vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 8%;
+            background: linear-gradient(135deg, rgba(11, 9, 10, 0.9), rgba(21, 25, 28, 0.95)), 
+                        url('viyanaart.jpg') no-repeat center center/cover;
+            color: var(--white);
+            border-bottom: 5px solid var(--primary-red);
+            position: relative;
+        }
+
+        .hero-content { max-width: 750px; z-index: 2; }
+
+        .meister-tag {
+            background: var(--energy-yellow);
+            color: var(--black);
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 {
+            font-size: 44px;
+            font-weight: bold;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 17.5px;
+            color: #e9ecef;
+            margin-bottom: 35px;
+        }
+
+        .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
+
+        .btn-main-call {
+            background-color: var(--primary-red);
+            color: var(--white);
+            padding: 15px 28px;
+            font-size: 15.5px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-sec-contact {
+            background-color: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            color: var(--white);
+            border: 2px solid var(--energy-yellow);
+            padding: 13px 24px;
+            font-size: 15.5px;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .section-wrap { padding: 80px 6%; }
+
+        .section-header {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 55px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: bold;
+            color: var(--black);
+            margin-bottom: 12px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px; left: 50%; transform: translateX(-50%);
+            width: 60px; height: 4px;
+            background: var(--primary-red);
+            border-radius: 2px;
+        }
+
+        /* 12'li Hizmet Kartları */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            transition: all 0.4s ease;
+            height: 100%;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(90deg, var(--primary-red), var(--energy-yellow));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-red);
+        }
+
+        .service-icon-banner {
+            width: 100%;
+            height: 190px;
+            background: #111622;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border-bottom: 3px solid var(--energy-yellow);
+            overflow: hidden;
+        }
+
+        .service-content {
+            padding: 26px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-content h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--black);
+            margin-bottom: 10px;
+        }
+
+        .service-content p {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .btn-card-offer {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            font-size: 14.5px;
+            display: block;
+            margin-top: 15px;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 26px;
+        }
+
+        .area-box {
+            background: var(--white);
+            padding: 30px 28px;
+            border-radius: 16px;
+            border-left: 6px solid var(--primary-red);
+            border-top: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .area-box h4 {
+            color: var(--black);
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 14px;
+        }
+
+        .area-viertel-list {
+            list-style: none;
+            margin-top: 12px;
+            padding-left: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .area-viertel-list li {
+            font-size: 14px;
+            background: #f8f9fa;
+            padding: 8px 12px;
+            border-radius: 8px;
+            border-left: 3px solid var(--energy-yellow);
+        }
+
+        .guide-container { max-width: 1150px; margin: 0 auto; }
+        .guide-layout { display: flex; gap: 30px; flex-wrap: wrap; }
+        .guide-column {
+            flex: 1;
+            min-width: 320px;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 35px 30px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .guide-column.safety { border-top: 6px solid var(--primary-red); }
+        .guide-column.help { border-top: 6px solid var(--energy-yellow); }
+
+        .guide-list { list-style: none; }
+        .guide-list li {
+            margin-bottom: 14px;
+            font-size: 14.5px;
+            background: #f8f9fa;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border-left: 3px solid var(--border-color);
+        }
+
+        /* ÜBER UNS & KALİBRE EDİLMİŞ ÖZELLİK KARTLARI */
+        .about-wrapper {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 18px;
+            padding: 45px 35px;
+            border: 1px solid var(--border-color);
+            border-top: 6px solid var(--primary-red);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 25px;
+        }
+
+        .about-feature-card {
+            background: #ffffff;
+            padding: 20px 22px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+            border-left: 4px solid var(--primary-red);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        .about-feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            border-left-color: var(--energy-yellow);
+        }
+
+        .about-feature-card h4 {
+            color: var(--black);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .about-feature-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .accessibility-statement {
+            background-color: #e9ecef;
+            padding: 22px 6%;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+        }
+
+        footer {
+            background-color: var(--footer-bg);
+            color: #ced4da;
+            padding: 70px 6% 30px;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+
+        .footer-logo-box {
+            background: #ffffff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 14px;
+            border: 2px solid var(--primary-red);
+        }
+
+        .footer-logo-box img { height: 48px; width: auto; object-fit: contain; }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 17.5px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 6px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #ced4da;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover { color: var(--primary-red); text-decoration: underline; }
+
+        .footer-phone-link { color: var(--energy-yellow) !important; font-size: 18px; font-weight: bold; }
+
+        .footer-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--whatsapp-green);
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .footer-badge {
+            display: inline-block;
+            background: rgba(217, 4, 4, 0.15);
+            color: #ff8787;
+            border: 1px solid rgba(217, 4, 4, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13.5px;
+            color: #adb5bd;
+        }
+
+        @media (max-width: 1100px) { 
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .about-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 920px) {
+            .mobile-menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%; left: 0; width: 100%;
+                background-color: #ffffff;
+                flex-direction: column;
+                padding: 15px 0;
+                box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+                border-bottom: 3px solid var(--primary-red);
+            }
+            .nav-links.active { display: flex; }
+            .nav-link { width: 100%; padding: 14px 25px; font-size: 16px; border-bottom: 1px solid #f1f3f5; }
+        }
+        @media (max-width: 768px) { 
+            .services-grid { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 600px) {
+            .emergency-topbar { flex-direction: column; text-align: center; }
+            .topbar-contacts { justify-content: center; }
+            .hero-content h1 { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Üst Bilgi Bandı -->
+    <div class="emergency-topbar" role="region" aria-label="Notdienst Info" data-aos="fade-down">
+        <div class="emergency-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
+        </div>
+        <div class="topbar-contacts">
+            <a href="https://wa.me/436645277706" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
+                WhatsApp
+            </a>
+            <a href="mailto:office@hd-24.at" class="topbar-btn" aria-label="E-Mail senden an office@hd-24.at">
+                office@hd-24.at
+            </a>
+            <a href="tel:+436645277706" class="topbar-btn phone-btn" aria-label="Telefonnummer anrufen: +43 664 5277706">
+                +43 664 5277706
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Navigasyon Çubuğu -->
+    <nav aria-label="Hauptnavigation" data-aos="fade-down" data-aos-delay="100">
+        <a href="index.html" class="brand-logo" aria-label="HD 24 Elektrotechnik Startseite">
+            <img src="logo.png" alt="HD 24 Elektrotechnik Logo">
+        </a>
+        <div class="nav-right-container">
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" class="nav-link">Startseite</a>
+                <a href="#services" class="nav-link">Leistungen</a>
+                <a href="#areas" class="nav-link">Einsatzgebiete</a>
+                <a href="#guide" class="nav-link">Kunden-Hilfe</a>
+                <a href="#about" class="nav-link">Über uns</a>
+                <a href="impressum.html" class="nav-link">Impressum</a>
+                <a href="datenschutz.html" class="nav-link">Datenschutz</a>
+                <a href="kontakt.html" class="nav-link">Kontakt</a>
+            </div>
+            
+            <a href="kontakt.html" class="nav-cta">
+                <svg viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+                24/7 Erreichbar
+            </a>
+
+            <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menü öffnen/schließen">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 3. Hero Bölümü -->
+    <section class="hero-banner" id="hero" role="banner">
+        <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
+            <span class="meister-tag">Meisterbetrieb | Mitglied der WKO Wien</span>
+            <h1>Ihr zertifizierter Elektriker für Wien, NÖ & Burgenland</h1>
+            <p>Suchen Sie einen verlässlichen und kompetenten Partner für Ihre elektrischen Anlagen? HD 24 Elektrotechnik bietet Ihnen höchste Qualität, Sicherheit und saubere Arbeitsweise in ganz Wien, Niederösterreich und dem Burgenland.</p>
+            <div class="hero-actions">
+                <a href="tel:+436645277706" class="btn-main-call" aria-label="Jetzt 24/7 Notdienst anrufen">📞 Jetzt 24/7 Service anrufen</a>
+                <a href="kontakt.html" class="btn-sec-contact">Kostenvoranschlag anfordern</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LEISTUNGEN (Tam Simetrik 12 Kart) -->
+    <section class="section-wrap" id="services" role="region" aria-labelledby="services-heading">
+        <div class="section-header" data-aos="fade-up">
+            <h2 id="services-heading">Leistungen</h2>
+            <p>Professionelle Ausführung nach ÖVE-Standards für Privat, Gewerbe und Industrie.</p>
+        </div>
+
+        <div class="services-grid">
+            <!-- 1. KGV & Freileitungen -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-icon-banner">
+                    <img src="index 13.webp" alt="Arbeiten an Freileitungen" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>KGV & Freileitungen</h3><p>Kompetente Betreuung von Kleingartenvereinen inklusive Errichtung und Wartung von Freileitungen.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 2. Beton-Einlegearbeiten -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="service-icon-banner">
+                    <img src="index5.webp" alt="Beton-Einlegearbeiten" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Beton-Einlegearbeiten</h3><p>Fachgerechte Rohrverlegung im Beton, individueller Verteilerbau und Schaltschrankmontage.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 3. Sanierung & Neubau -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-icon-banner">
+                    <img src="index1 (1).webp" alt="Sanierung und Neubau Elektroinstallation" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Sanierung & Neubau</h3><p>Umfassende Elektroinstallationen für Altbauten, Wohnhausanlagen und moderne Neubauprojekte.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 4. Geschäftsinstallation & Gewerbe -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="service-icon-banner">
+                    <img src="Index6 (1).webp" alt="Geschäftsinstallation und Gewerbe" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Geschäftsinstallation & Gewerbe</h3><p>Maßgeschneiderte Elektrokonzepte für Büros, Geschäfte, Praxen und gewerbliche Betriebe.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 5. Sprechanlagen -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-icon-banner">
+                    <img src="index22.jpg" alt="Moderne Sprechanlage und Video-Türstation im Betonsockel" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='index22.webp';" style="width: 100%; height: 100%; object-fit: cover; object-position: center 28%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Sprechanlagen</h3><p>Moderne Audio- und Video-Sprechanlagen, smarte Türkommunikation sowie IP-Intercom für Ein- und Mehrfamilienhäuser.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 6. KNX Bussysteme & Smart Home -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <div class="service-icon-banner">
+                    <img src="index21.webp" alt="KNX Bussysteme und Smart Home Touch Panel" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='index21.jpg';" style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>KNX & Smart Home</h3><p>Zukunftssichere Gebäudeautomation mit KNX: Intelligente Steuerung von Beleuchtung, Heizung, Beschattung und Energieeffizienz.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 7. Kommunikation & EDV -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="service-icon-banner">
+                    <img src="kommunikation.webp" alt="Kommunikation Netzwerktechnik und Verteiler" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Kommunikation & IT</h3><p>Installation von SAT-TV-Anlagen, strukturierten Netzwerkverkabelungen, Serverschränken und Datentechnik.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 8. Erneuerbare Energien -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="450">
+                <div class="service-icon-banner">
+                    <img src="index-10 (1).webp" alt="Erneuerbare Energien KEBA Wallbox Installation" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: center 20%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Erneuerbare Energien</h3><p>Nachhaltige Photovoltaik-Anlagen und professionelle Wallbox-Installationen (KEBA) für Ihre E-Mobilität.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 9. Notbeleuchtung & Sicherheitsbeleuchtung -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="service-icon-banner">
+                    <img src="index 19.webp" alt="Notbeleuchtung und Sicherheitsbeleuchtung Schrack" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: center center; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Notbeleuchtung</h3><p>Normgerechte Not- und Sicherheitsbeleuchtung sowie Fluchtweg-Kennzeichnung nach TRVB und ÖVE/ÖNORM.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 10. Sicherheit & Prüfung -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="550">
+                <div class="service-icon-banner">
+                    <img src="sicherheit.webp" alt="Sicherheit und Prüfung E-Befund ÖVE Fluke Messung" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: center 35%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Sicherheit & Prüfung</h3><p>Rechtssichere E-Befunde (ÖVE), Blitzschutzanlagen und modernste Videoüberwachung.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 11. Beleuchtungstechnik -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="service-icon-banner">
+                    <img src="index16.webp" alt="Moderne Beleuchtungstechnik und LED Treppenbeleuchtung" loading="lazy" decoding="async" style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Beleuchtungstechnik</h3><p>Moderne LED-Lichtkonzepte, indirekte Stufenbeleuchtungen und energieeffiziente Lichtlösungen für Ihr Zuhause und Gewerbe.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+
+            <!-- 12. Zählerkasten & Verteilerbau -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="650">
+                <div class="service-icon-banner">
+                    <img src="index20.webp" alt="Zählerkasten und Verteilerbau mit Zähler und Sicherungen" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='index20.jpg';" style="width: 100%; height: 100%; object-fit: cover; object-position: center 60%; display: block;">
+                </div>
+                <div class="service-content">
+                    <div><h3>Zählerkasten & Verteilerbau</h3><p>Normgerechter Zählertausch, Nachrüstung von FI-Schutzschaltern und maßgeschneiderte Verteileranlagen nach Wiener Netze Vorgaben.</p></div>
+                    <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Einsatzgebiete (Simetrik 2x2) -->
+    <section class="section-wrap" id="areas" style="background-color: #ffffff;" role="region" aria-labelledby="areas-heading" data-aos="fade-up">
+        <div class="section-header">
+            <h2 id="areas-heading">Schnell vor Ort: Unser Einsatzgebiet</h2>
+            <p>Ihr zuverlässiger Partner für Wien, Niederösterreich und das Burgenland.</p>
+        </div>
+        <div class="areas-grid">
+            <div class="area-box" data-aos="zoom-in" data-aos-delay="100">
+                <h4>🏛️ Wien (Alle 23 Bezirke)</h4>
+                <p>Umfassende Elektroinstallationen, rascher Not- und Störungsservice sowie fachgerechte Altbausanierungen und Wohnhausbetreuung in der gesamten Bundeshauptstadt:</p>
+                <ul class="area-viertel-list">
+                    <li><strong>Innere Bezirke:</strong> 1. bis 9. Bezirk (Altbau, Gewerbe & Praxen)</li>
+                    <li><strong>Westliche Bezirke:</strong> 10. bis 19. Bezirk (Wohnanlagen & KGV)</li>
+                    <li><strong>Transdanubien:</strong> 21. Floridsdorf & 22. Donaustadt (Neubauprojekte)</li>
+                    <li><strong>Süd-Ost:</strong> 23. Liesing & 11. Simmering (Gewerbe & Industrie)</li>
+                </ul>
+            </div>
+            
+            <div class="area-box" data-aos="zoom-in" data-aos-delay="200">
+                <h4>🌾 Niederösterreich (Alle 4 Viertel)</h4>
+                <p>Flächendeckender Vor-Ort-Service mit schnellen Anfahrtszeiten in allen Regionen Niederösterreichs:</p>
+                <ul class="area-viertel-list">
+                    <li><strong>Weinviertel:</strong> Korneuburg, Stockerau, Mistelbach, Gänserndorf, Gerasdorf</li>
+                    <li><strong>Industrieviertel:</strong> Wiener Neustadt, Baden, Mödling, Schwechat</li>
+                    <li><strong>Mostviertel:</strong> St. Pölten, Amstetten, Krems an der Donau, Melk</li>
+                    <li><strong>Waldviertel:</strong> Zwettl, Horn, Gmünd, Waidhofen an der Thaya</li>
+                </ul>
+            </div>
+            
+            <div class="area-box" data-aos="zoom-in" data-aos-delay="300">
+                <h4>☀ Burgenland (Nord bis Süd)</h4>
+                <p>Verlässliche Elektroinstallationen, Blitzschutz, E-Befunde und nachhaltige Photovoltaik-Lösungen im gesamten Burgenland:</p>
+                <ul class="area-viertel-list">
+                    <li><strong>Nordburgenland:</strong> Eisenstadt, Neusiedl am See, Rust</li>
+                    <li><strong>Mittelburgenland:</strong> Mattersburg, Oberpullendorf</li>
+                    <li><strong>Südburgenland:</strong> Oberwart, Güssing, Jennersdorf</li>
+                    <li><strong>Service vor Ort:</strong> Neubauten, Einfamilienhäuser & KGV-Vereine</li>
+                </ul>
+            </div>
+            
+            <div class="area-box" data-aos="zoom-in" data-aos-delay="400">
+                <h4>🛡 Meisterbetrieb Qualitätsstandards</h4>
+                <p>Höchste Präzision und geprüfte Rechtssicherheit nach den strengen Richtlinien des österreichischen Elektrogewerbes:</p>
+                <ul class="area-viertel-list">
+                    <li><strong>Normkonformität:</strong> Exakte Einhaltung der ÖVE/ÖNORM Bestimmungen</li>
+                    <li><strong>Mitgliedschaft:</strong> Eingetragener Meisterbetrieb der WKO Wien</li>
+                    <li><strong>Sicherheit & Gewähr:</strong> Rechtssichere E-Befunde und Dokumentation</li>
+                    <li><strong>Sauberkeit aus Prinzip:</strong> Sorgfältige und termintreue Arbeitsweise</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- KUNDEN-HILFE -->
+    <section class="section-wrap" id="guide" role="region" aria-labelledby="guide-heading" data-aos="fade-up">
+        <div class="section-header">
+            <h2 id="guide-heading">Kunden-Hilfe & Notfall-Leitfaden</h2>
+            <p>Was tun bis der Elektriker kommt? Sicherheitshinweise und Tipps für eine schnelle Hilfe.</p>
+        </div>
+        <div class="guide-container">
+            <div class="guide-layout">
+                <div class="guide-column safety" data-aos="fade-right">
+                    <div>
+                        <h3>🛡 Bis der Elektriker kommt</h3>
+                        <ul class="guide-list">
+                            <li><strong>Nichts öffnen oder reparieren:</strong> Keine Steckdosen, Schalter veya Sicherungskästen eigenständig auseinanderbauen.</li>
+                            <li><strong>Bei Funken, Rauch oder Brandgeruch:</strong> Sofort Abstand halten und Hauptschalter abschalten.</li>
+                            <li><strong>Wasser trifft Elektrik:</strong> Niemals ins Wasser treten veya feuchte Geräte berühren.</li>
+                            <li><strong>Häufig auslösende Sicherung:</strong> Nicht immer wieder einschalten! Brandgefahr durch Defekt.</li>
+                            <li><strong>Beschädigte Kabel:</strong> Bereich sofort sperren und Personen fernhalten.</li>
+                            <li><strong>Stromschlag-Notfall:</strong> Betroffene Person niemals direkt berühren. Strom zuerst abschalten!</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="guide-column help" data-aos="fade-left">
+                    <div>
+                        <h3>📞 So helfen Sie dem Elektriker</h3>
+                        <p style="font-size: 14.5px; color: var(--text-muted); margin-bottom: 20px;">Halten Sie für Ihren Anruf folgende Angaben bereit:</p>
+                        <ul class="guide-list">
+                            <li><strong>Was ist passiert?</strong> (z. B. „Um 14:20 Uhr ist plötzlich der FI-Schalter gefallen“).</li>
+                            <li><strong>Was funktioniert nicht?</strong> (Nur ein Raum oder im ganzen Haus?).</li>
+                            <li><strong>Was war eingeschaltet?</strong> (Herd, Waschmaschine, Boiler usw.).</li>
+                            <li><strong>Was haben Sie bemerkt?</strong> (Knall, Funken, Geruch, Hitze veya Wasser).</li>
+                            <li><strong>Gab es Vorarbeiten?</strong> (Neue Steckdose, Bohrarbeiten veya Renovierungen).</li>
+                            <li><strong>Fotos machen (sicherer Abstand):</strong> Hilft dem Elektriker bei der Vorbereitung.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜBER UNS -->
+    <section class="section-wrap" id="about" role="region" aria-labelledby="about-heading" data-aos="fade-up">
+        <div class="section-header">
+            <h2 id="about-heading">Über uns</h2>
+            <p>Ihr Meisterbetrieb für Wien, NÖ & Burgenland</p>
+        </div>
+        
+        <div class="about-wrapper" data-aos="zoom-in">
+            <h3 style="font-size: 24px; font-weight: bold; color: var(--black); margin-bottom: 18px;">HD 24 Elektrotechnik: Qualität durch Präzision. Sauberkeit aus Prinzip.</h3>
+            <p style="font-size: 15.5px; color: var(--text-muted); margin-bottom: 18px; line-height: 1.8;">Willkommen bei HD 24 Elektrotechnik – Ihrem staatlich geprüften Meisterbetrieb für innovative Energie- und Gebäudetechnik. Wir sind Ihr verlässlicher Partner für professionelle Elektroinstallationen in ganz Wien, Niederösterreich (von Gerasdorf bis Gänserndorf) und dem Burgenland. Unser Name steht für Handschlagqualität, technische Exzellenz und eine außergewöhnlich saubere Arbeitsweise.</p>
+
+            <h4 style="font-size: 20px; font-weight: bold; color: var(--black); margin: 35px 0 10px 0; border-bottom: 2px solid var(--bg-light); padding-bottom: 8px;">
+                Unser umfassendes Leistungsspektrum:
+            </h4>
+            
+            <div class="about-grid">
+                <div class="about-feature-card">
+                    <h4>Sanierung & Neubau</h4>
+                    <p>Spezialist für Altbauten, moderne Neubauprojekte, Wohnhausanlagen und Einfamilienhäuser.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>KNX & Smart Home</h4>
+                    <p>Zukunftssichere Gebäudeautomation, Bus-Systeme, Licht- und Beschattungssteuerung.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Sprechanlagen</h4>
+                    <p>Audio- und Video-Sprechanlagen, moderne Türstationen und smarte IP-Intercom-Systeme.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Gewerbeinstallation</h4>
+                    <p>Maßgeschneiderte Elektrokonzepte und Beleuchtung für Büros, Praxen und Geschäftslokale.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>KGV & Freileitungen</h4>
+                    <p>Fachgerechte Betreuung von Kleingartenvereinen inklusive Mastmontage und Freileitungsbau.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Sicherheit & Prüfung</h4>
+                    <p>Rechtssichere E-Befunde nach ÖVE/ÖNORM, professioneller Blitzschutz und Videoüberwachung.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Erneuerbare Energien</h4>
+                    <p>Effiziente Photovoltaik-Lösungen und normgerechte KEBA Wallbox-Installationen für E-Mobilität.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Rohbau & Betonarbeiten</h4>
+                    <p>Fachgerechte Beton-Einlegearbeiten, Mauernutfräsungen und exakter Rohbau-Leitungsbau.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Zählerkasten & Verteilerbau</h4>
+                    <p>Normgerechter Zählertausch, Nachrüstung von FI-Schaltern nach Wiener Netze Vorgaben.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Netzwerk & IT-Technik</h4>
+                    <p>Strukturierte Datenverkabelung, Serverschränke, SAT-Anlagen und Telekommunikation.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Beleuchtungstechnik</h4>
+                    <p>Energieeffiziente LED-Konzepte, indirekte Stufenbeleuchtung und Lichtakzente.</p>
+                </div>
+                <div class="about-feature-card">
+                    <h4>Notdienst & Reparatur</h4>
+                    <p>Schnelle Störungsbehebung, Fehlerdiagnose und Reparaturen bei elektrotechnischen Defekten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Barrierefreiheit -->
+    <div class="accessibility-statement">
+        <h4>Erklärung zur Barrierefreiheit</h4>
+        <p>HD 24 Elektrotechnik ist bemüht, ihre Website in Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2019/882 barrierefrei zugänglich zu machen (BITV 2.0).</p>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Direktkontakt</h5>
+                <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">24h Service-Bereitschaft</p>
+                <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
+                <a href="mailto:office@hd-24.at" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
+                <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
+                    💬 WhatsApp Chat starten
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h5>WKO & Rechtliches</h5>
+                <p>Meisterbetrieb</p>
+                <p>Mitglied der WKO Wien</p>
+                <p>Landesinnung Elektrotechnik</p>
+                <p><a href="impressum.html" style="color: #adb5bd;">Impressum ansehen</a></p>
+                <p><a href="datenschutz.html" style="color: #adb5bd;">Datenschutzerklärung</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h5>Schnellzugriff</h5>
+                <a href="index.html">Startseite</a>
+                <a href="#services">Leistungen</a>
+                <a href="#areas">Einsatzgebiete</a>
+                <a href="#guide">Kunden-Hilfe</a>
+                <a href="#about">Über uns</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-logo-box">
+                    <a href="index.html" aria-label="Zur Startseite"><img src="logo.png" alt="HD 24 Logo"></a>
+                </div>
+                <p style="font-size: 14px; margin-top: 8px;">Ihr zertifizierter Meisterbetrieb für Elektrotechnik in Wien, NÖ & Burgenland.</p>
+                <span class="footer-badge">Zertifizierter Meisterbetrieb</span>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 HD 24 Elektrotechnik e.U. Alle Rechte vorbehalten. Erstellt nach ÖVE-Standards, DSGVO und BITV 2.0.
+        </div>
+    </footer>
+
+    <!-- AOS JavaScript & Mobil Menü Scripti -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>

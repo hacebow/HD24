@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie HD 24 Elektrotechnik in Wien. Ihr Meisterbetrieb für Elektroinstallationen, KNX Smart Home, Sprechanlagen, E-Befund und Service nach ÖVE-Standards. Barrierefrei nach BITV 2.0.">
+    <title>Kontakt & Kostenvoranschlag | HD 24 Elektrotechnik e.U.</title>
+    
+    <!-- Favicon & Mobil İkonlar -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <!-- AOS Kütüphanesi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #d90429;
+            --primary-dark: #8d0801;
+            --black: #0b090a;
+            --footer-bg: #161a1d;
+            --card-bg: #111622;
+            --energy-yellow: #ffb703;
+            --neon-green: #00f5d4;
+            --whatsapp-green: #25d366;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --text-dark: #212529;
+            --text-muted: #495057;
+            --border-color: #dee2e6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', Geneva, sans-serif !important;
+        }
+
+        a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+            outline: 3px solid var(--energy-yellow) !important;
+            outline-offset: 2px;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 70px;
+            overflow-x: hidden;
+        }
+
+        /* 1. Üst Bilgi Bandı */
+        .emergency-topbar {
+            background-color: #0d0f12;
+            color: var(--white);
+            padding: 10px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 3px solid var(--primary-red);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.2px;
+        }
+
+        .status-dot {
+            width: 12px;
+            height: 12px;
+            background-color: #00f5d4;
+            border-radius: 50%;
+            display: inline-block;
+            box-shadow: 0 0 12px #00f5d4;
+            animation: pulseGreen 1.3s infinite;
+        }
+
+        @keyframes pulseGreen {
+            0% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+            50% { transform: scale(1.25); opacity: 1; box-shadow: 0 0 18px #00f5d4; }
+            100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 5px #00f5d4; }
+        }
+
+        .topbar-contacts {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .topbar-btn {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 13px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            transition: all 0.25s ease;
+        }
+
+        .topbar-btn svg {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+
+        .topbar-btn:hover {
+            background: rgba(255, 255, 255, 0.18);
+            border-color: #ffffff;
+            color: #ffffff;
+            transform: translateY(-1px);
+        }
+
+        .topbar-btn.whatsapp-btn {
+            background: rgba(37, 211, 102, 0.15);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25d366;
+        }
+
+        .topbar-btn.whatsapp-btn:hover {
+            background: #25d366;
+            color: #ffffff;
+            border-color: #25d366;
+            box-shadow: 0 0 14px rgba(37, 211, 102, 0.4);
+        }
+
+        .topbar-btn.phone-btn {
+            background: rgba(217, 4, 41, 0.15);
+            border-color: rgba(217, 4, 41, 0.4);
+            color: #ff6b6b;
+        }
+
+        .topbar-btn.phone-btn:hover {
+            background: var(--primary-red);
+            color: #ffffff;
+            border-color: var(--primary-red);
+            box-shadow: 0 0 14px rgba(217, 4, 41, 0.4);
+        }
+
+        /* 2. Navigasyon */
+        nav {
+            background-color: var(--white);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .brand-logo img {
+            height: 52px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.25s ease;
+        }
+
+        .brand-logo:hover img {
+            transform: scale(1.03);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            padding: 8px 12px;
+            font-size: 14.5px;
+            font-weight: 700;
+            color: var(--text-dark);
+            border-radius: 6px;
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link.active-link {
+            color: var(--primary-red);
+            background-color: rgba(217, 4, 41, 0.06);
+        }
+
+        .nav-link.active-link {
+            border-bottom: 2px solid var(--primary-red);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            padding: 8px 10px;
+            cursor: pointer;
+            color: var(--text-dark);
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2.5px;
+            background-color: var(--text-dark);
+            border-radius: 2px;
+        }
+
+        /* 3. Sayfa Başlığı */
+        .page-header {
+            background: linear-gradient(135deg, rgba(11, 9, 10, 0.9), rgba(21, 25, 28, 0.95)), 
+                        url('viyanaart.jpg') no-repeat center center/cover;
+            color: var(--white);
+            padding: 65px 8%;
+            text-align: center;
+            border-bottom: 4px solid var(--primary-red);
+        }
+
+        .page-header h1 {
+            font-size: 38px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
+        }
+
+        .page-header p {
+            font-size: 16.5px;
+            color: #e9ecef;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .section-wrap {
+            padding: 70px 6%;
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+
+        /* 4. Form & Bilgi Kartı Düzeni */
+        .contact-layout {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+            align-items: stretch;
+        }
+
+        .contact-form-card {
+            flex: 1.35;
+            min-width: 320px;
+            background: var(--white);
+            padding: 42px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .contact-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 6px;
+            background: linear-gradient(90deg, var(--primary-red), var(--energy-yellow));
+            border-radius: 16px 16px 0 0;
+        }
+
+        .contact-form-card h2 {
+            font-size: 26px;
+            font-weight: bold;
+            color: var(--black);
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+
+        .contact-form-card p.form-sub {
+            font-size: 14.5px;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .contact-info-card {
+            flex: 1;
+            min-width: 310px;
+            background: linear-gradient(135deg, #111622, #0b090a);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+            border: 2px solid var(--energy-yellow);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info-card h3 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 24px;
+            color: var(--energy-yellow);
+            border-bottom: 1px solid rgba(255,255,255,0.15);
+            padding-bottom: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 22px;
+            font-size: 15px;
+            color: #f1f3f5;
+        }
+
+        .info-item svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--energy-yellow);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .info-item a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .info-item a:hover {
+            color: var(--energy-yellow);
+            text-decoration: underline;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14.5px;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: var(--black);
+        }
+
+        .form-group label span {
+            color: var(--primary-red);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 14.5px;
+            background-color: #fafbfc;
+            font-family: inherit;
+            transition: all 0.2s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background-color: var(--white);
+            box-shadow: 0 0 0 3px rgba(217, 4, 41, 0.12);
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-red), var(--primary-dark));
+            color: var(--white);
+            border: none;
+            width: 100%;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(217, 4, 41, 0.35);
+            transition: all 0.25s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(217, 4, 41, 0.5);
+        }
+
+        #formStatus {
+            display: none;
+            margin-top: 18px;
+            padding: 14px 18px;
+            border-radius: 8px;
+            font-size: 14.5px;
+            font-weight: bold;
+            text-align: center;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        #formStatus.success {
+            background-color: #d1e7dd;
+            color: #0f5132;
+            border: 1px solid #badbcc;
+        }
+
+        #formStatus.error {
+            background-color: #f8d7da;
+            color: #842029;
+            border: 1px solid #f5c2c7;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .accessibility-statement {
+            background-color: #e9ecef;
+            padding: 22px 6%;
+            font-size: 13.5px;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            line-height: 1.6;
+        }
+
+        .accessibility-statement h4 {
+            color: var(--black);
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+
+        /* 5. Footer */
+        footer {
+            background-color: var(--footer-bg);
+            color: #ced4da;
+            padding: 70px 6% 30px;
+            font-size: 14.5px;
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 35px;
+            margin-bottom: 45px;
+        }
+
+        .footer-logo-box {
+            background: #ffffff;
+            padding: 14px 20px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 14px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            border: 2px solid var(--primary-red);
+        }
+
+        .footer-logo-box img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+            display: block;
+        }
+
+        .footer-col h5 {
+            color: var(--white);
+            font-size: 17.5px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            padding-bottom: 6px;
+        }
+
+        .footer-col p, .footer-col a {
+            color: #ced4da;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .footer-col a:hover {
+            color: var(--primary-red);
+            text-decoration: underline;
+        }
+
+        .footer-phone-link {
+            color: var(--energy-yellow) !important;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer-whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--whatsapp-green);
+            color: var(--white) !important;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 6px;
+            transition: all 0.2s;
+        }
+
+        .footer-whatsapp-btn:hover {
+            transform: translateY(-2px);
+            background-color: #21867a;
+        }
+
+        .footer-badge {
+            display: inline-block;
+            background: rgba(217, 4, 4, 0.15);
+            color: #ff8787;
+            border: 1px solid rgba(217, 4, 4, 0.3);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .footer-copy {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 13.5px;
+            color: #adb5bd;
+        }
+
+        @media (max-width: 1024px) {
+            .nav-link { padding: 6px 8px; font-size: 13px; }
+        }
+
+        @media (max-width: 920px) {
+            .mobile-menu-toggle { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: #ffffff;
+                flex-direction: column;
+                padding: 15px 0;
+                box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+                border-bottom: 3px solid var(--primary-red);
+                gap: 0;
+            }
+            .nav-links.active { display: flex; }
+            .nav-link {
+                width: 100%;
+                padding: 14px 25px;
+                font-size: 16px;
+                border-bottom: 1px solid #f1f3f5;
+                border-radius: 0;
+            }
+            .nav-link:hover { background-color: #f8f9fa; }
+        }
+
+        @media (max-width: 600px) {
+            .emergency-topbar {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: 8px;
+            }
+            .topbar-contacts { justify-content: center; width: 100%; }
+            .topbar-btn { font-size: 12px; padding: 5px 8px; }
+            .brand-logo img { height: 42px; }
+            .page-header h1 { font-size: 28px; }
+            .contact-form-card, .contact-info-card { padding: 26px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Üst Bilgi Bandı -->
+    <div class="emergency-topbar" role="region" aria-label="Notdienst Info" data-aos="fade-down">
+        <div class="emergency-status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
+        </div>
+        <div class="topbar-contacts">
+            <a href="https://wa.me/436645277706" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
+                <svg viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.694.074-2.18-.541-1.782-.736-2.91-2.56-3.003-2.68-.088-.12-1.258-1.675-1.258-3.195 0-1.52.793-2.268 1.074-2.58.28-.312.607-.39.81-.39.202 0 .405.002.582.01.189.009.439-.071.687.525.25.597.854 2.083.928 2.235.075.152.126.33.025.531-.102.202-.152.33-.303.506-.152.177-.32.395-.457.531-.152.152-.31.317-.133.621.177.304.787 1.296 1.687 2.097 1.157 1.031 2.132 1.35 2.435 1.502.304.152.482.127.66-.076.177-.202.76-.885.963-1.188.202-.304.405-.253.683-.152.278.102 1.769.835 2.073.987.304.152.506.228.582.355.076.126.076.733-.068 1.138zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.662 1.434 5.177L2 22l4.98-1.306A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+                WhatsApp
+            </a>
+            <a href="mailto:office@hd-24.at" class="topbar-btn" aria-label="E-Mail senden an office@hd-24.at">
+                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                office@hd-24.at
+            </a>
+            <a href="tel:+436645277706" class="topbar-btn phone-btn" aria-label="Telefonnummer anrufen: +43 664 5277706">
+                <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                +43 664 5277706
+            </a>
+        </div>
+    </div>
+
+    <!-- 2. Navigasyon Çubuğu -->
+    <nav aria-label="Hauptnavigation" data-aos="fade-down" data-aos-delay="100">
+        <a href="index.html" class="brand-logo" aria-label="HD 24 Elektrotechnik Startseite">
+            <img src="logo.png" alt="HD 24 Elektrotechnik Logo">
+        </a>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="nav-link">Startseite</a>
+            <a href="index.html#services" class="nav-link">Leistungen</a>
+            <a href="index.html#areas" class="nav-link">Einsatzgebiete</a>
+            <a href="index.html#guide" class="nav-link">Kunden-Hilfe</a>
+            <a href="index.html#about" class="nav-link">Über uns</a>
+            <a href="impressum.html" class="nav-link">Impressum</a>
+            <a href="datenschutz.html" class="nav-link">Datenschutz</a>
+            <a href="kontakt.html" class="nav-link active-link">Kontakt</a>
+        </div>
+
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Menü öffnen/schließen">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- 3. Sayfa Başlığı -->
+    <div class="page-header" role="banner" data-aos="fade-down">
+        <h1>Kontakt & Kostenvoranschlag</h1>
+        <p>Ihr verlässlicher Meisterbetrieb für Wien, Niederösterreich und das Burgenland. Fordern Sie jetzt Ihr maßgeschneidertes Angebot an oder kontaktieren Sie uns direkt.</p>
+    </div>
+
+    <!-- 4. İletişim Formu & Bilgiler -->
+    <section class="section-wrap" role="region" aria-labelledby="contact-heading">
+        <div class="contact-layout">
+            
+            <!-- Sol: Form -->
+            <div class="contact-form-card" data-aos="fade-right">
+                <h2 id="contact-heading">Kontakt & Kostenvoranschlag</h2>
+                <p class="form-sub">Füllen Sie das Formular aus – wir antworten Ihnen verlässlich und zeitnah.</p>
+                
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Ihr Name / Firma <span>*</span></label>
+                        <input type="text" id="name" name="name" required placeholder="Vor- und Nachname oder Firmenname">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefonnummer <span>*</span></label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+43 664 ...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-Mail-Adresse <span>*</span></label>
+                        <input type="email" id="email" name="email" required placeholder="beispiel@domain.at">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Gewünschte Leistung <span>*</span></label>
+                        <select id="service" name="service" required>
+                            <option value="" disabled selected>Bitte wählen Sie eine Leistung</option>
+                            <option value="Sprechanlagen & Intercom">Sprechanlagen (Audio / Video / IP)</option>
+                            <option value="KNX Bussysteme & Smart Home">KNX Bussysteme & Smart Home Automation</option>
+                            <option value="Sanierung & Neubau">Sanierung & Neubau (Wohnbau & Altbau)</option>
+                            <option value="Geschäftsinstallation & Gewerbe">Geschäftsinstallation & Gewerbe</option>
+                            <option value="KGV & Freileitungen">KGV & Freileitungen</option>
+                            <option value="Beton-Einlegearbeiten">Beton-Einlegearbeiten & Verteilerbau</option>
+                            <option value="Kommunikation & Netzwerktechnik">Kommunikation & IT-Netzwerktechnik</option>
+                            <option value="Erneuerbare Energien (Wallbox / PV)">Erneuerbare Energien (Wallbox / Photovoltaik)</option>
+                            <option value="Notbeleuchtung & Fluchtwege">Notbeleuchtung & Fluchtwege (TRVB / ÖVE)</option>
+                            <option value="Sicherheit & Prüfung (E-Befund)">Sicherheit & Prüfung (E-Befund ÖVE)</option>
+                            <option value="Beleuchtungstechnik & LED">Beleuchtungstechnik & moderne LED-Systeme</option>
+                            <option value="Zählerkasten & Verteilerbau">Zählerkasten & Verteilerbau</option>
+                            <option value="Reparatur & Instandhaltung">Reparatur & Allgemeine Störungsbehebung</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Ihre Nachricht / Projektdetails <span>*</span></label>
+                        <textarea id="message" name="message" rows="4" required placeholder="Beschreiben Sie kurz Ihr Projekt oder Ihr Anliegen..."></textarea>
+                    </div>
+                    
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        <span>Anfrage jetzt absenden</span>
+                    </button>
+                    
+                    <div id="formStatus"></div>
+                </form>
+            </div>
+
+            <!-- Sağ: Kurumsal Bilgi Kartı -->
+            <div class="contact-info-card" data-aos="fade-left">
+                <div>
+                    <h3>HD 24 Meisterbetrieb</h3>
+                    
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                        <div>
+                            <strong>Standort:</strong><br>
+                            Marischkapromenade 11/2/6<br>
+                            1210 Wien, Österreich
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        <div>
+                            <strong>Telefon:</strong><br>
+                            <a href="tel:+436645277706">+43 664 5277706</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <div>
+                            <strong>E-Mail:</strong><br>
+                            <a href="mailto:office@hd-24.at">office@hd-24.at</a>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                        <div>
+                            <strong>Rechtliche Daten:</strong><br>
+                            Inhaber: Yunus Nazli<br>
+                            FN: 608957 a | HG Wien<br>
+                            UID: ATU79865148
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 35px; font-size: 13px; color: #adb5bd; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 18px;">
+                    Mitglied der WKO Wien | Landesinnung Elektrotechnik | Staatlich geprüfter Meisterbetrieb
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Barrierefreiheit -->
+    <div class="accessibility-statement">
+        <h4>Erklärung zur Barrierefreiheit</h4>
+        <p>HD 24 Elektrotechnik ist bemüht, ihre Website in Einklang mit den nationalen Rechtsvorschriften zur Umsetzung der Richtlinie (EU) 2019/882 barrierefrei zugänglich zu machen (BITV 2.0).</p>
+    </div>
+
+    <!-- 5. Footer -->
+    <footer role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h5>Direktkontakt</h5>
+                <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">24h Service-Bereitschaft</p>
+                <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
+                <a href="mailto:office@hd-24.at" class="footer-email-link" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
+                <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
+                    💬 WhatsApp Chat starten
+                </a>
+            </div>
+
+            <div class="footer-col">
+                <h5>WKO & Rechtliches</h5>
+                <p>Meisterbetrieb</p>
+                <p>Mitglied der WKO Wien</p>
+                <p>Landesinnung Elektrotechnik</p>
+                <p><a href="impressum.html" style="color: #adb5bd;">Impressum ansehen</a></p>
+                <p><a href="datenschutz.html" style="color: #adb5bd;">Datenschutzerklärung</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h5>Schnellzugriff</h5>
+                <a href="index.html">Startseite</a>
+                <a href="index.html#services">Leistungen</a>
+                <a href="index.html#areas">Einsatzgebiete</a>
+                <a href="index.html#guide">Kunden-Hilfe</a>
+                <a href="index.html#about">Über uns</a>
+                <a href="impressum.html">Impressum</a>
+                <a href="datenschutz.html">Datenschutz</a>
+                <a href="kontakt.html">Kontakt</a>
+            </div>
+
+            <div class="footer-col">
+                <div class="footer-logo-box">
+                    <a href="index.html" aria-label="Zur Startseite"><img src="logo.png" alt="HD 24 Logo"></a>
+                </div>
+                <p style="font-size: 14px; margin-top: 8px;">Ihr zertifizierter Meisterbetrieb für Elektrotechnik in Wien, NÖ & Burgenland.</p>
+                <span class="footer-badge">Zertifizierter Meisterbetrieb</span>
+            </div>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 HD 24 Elektrotechnik e.U. Alle Rechte vorbehalten. Erstellt nach ÖVE-Standards, DSGVO und BITV 2.0.
+        </div>
+    </footer>
+
+    <!-- AOS JavaScript & AJAX Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 100 });
+
+        // Mobil Menü
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (mobileMenuBtn && navLinks) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                });
+            });
+        }
+
+        // Form Gönderimi
+        const contactForm = document.getElementById('contactForm');
+        const formStatus = document.getElementById('formStatus');
+        const submitBtn = document.getElementById('submitBtn');
+
+        if (contactForm) {
+            contactForm.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                submitBtn.disabled = true;
+                submitBtn.innerText = "Wird gesendet...";
+                formStatus.style.display = "none";
+                formStatus.className = "";
+
+                const formData = new FormData(contactForm);
+
+                try {
+                    const response = await fetch("sendmail.php", {
+                        method: "POST",
+                        body: formData
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok && data.status === 'success') {
+                        formStatus.className = "success";
+                        formStatus.innerHTML = "✓ Vielen Dank! Ihre Anfrage wurde erfolgreich übermittelt. Wir melden uns umgehend bei Ihnen.";
+                        formStatus.style.display = "block";
+                        contactForm.reset();
+                    } else {
+                        formStatus.className = "error";
+                        formStatus.innerHTML = "⚠ Fehler beim Senden. Bitte rufen Sie uns direkt an: <a href='tel:+436645277706' style='color:#842029;'>+43 664 5277706</a>";
+                        formStatus.style.display = "block";
+                    }
+                } catch (error) {
+                    formStatus.className = "error";
+                    formStatus.innerHTML = "⚠ Server-Verbindung fehlgeschlagen. Bitte kontaktieren Sie uns direkt: <a href='tel:+436645277706' style='color:#842029;'>+43 664 5277706</a>";
+                    formStatus.style.display = "block";
+                } finally {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = "Anfrage jetzt absenden";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
