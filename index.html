@@ -307,14 +307,15 @@
             border-radius: 2px;
         }
 
-        /* 3. Hero-Bereich */
+        /* 3. Hero-Bereich (Manzara Aydınlatıldı) */
         .hero-banner {
             min-height: 82vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 60px 6%;
-            background: linear-gradient(135deg, rgba(11, 9, 10, 0.9), rgba(21, 25, 28, 0.95)), 
+            /* Filtre opaklığı 0.95'ten 0.8'e, 0.9'dan 0.65'e düşürüldü */
+            background: linear-gradient(135deg, rgba(11, 9, 10, 0.65), rgba(21, 25, 28, 0.8)), 
                         url('viyanaart.jpg') no-repeat center center/cover;
             color: var(--white);
             border-bottom: 5px solid var(--primary-red);
@@ -350,6 +351,8 @@
             margin-bottom: 20px;
             word-wrap: break-word;
             max-width: 850px;
+            /* Aydınlık arka planda okunması için güçlü gölge eklendi */
+            text-shadow: 0 2px 15px rgba(0,0,0,0.8);
         }
 
         .hero-content p {
@@ -357,6 +360,7 @@
             color: #e9ecef;
             margin-bottom: 35px;
             max-width: 800px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
         }
 
         .hero-actions { display: flex; gap: 15px; flex-wrap: wrap; }
@@ -474,7 +478,6 @@
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
         }
 
-        /* Mobilde ve PC'de Her Zaman Parlak Kalsın */
         .service-card::before {
             content: '';
             position: absolute;
@@ -487,7 +490,6 @@
         .service-card:hover {
             transform: translateY(-8px);
             border-color: rgba(255, 183, 3, 0.75);
-            /* Sansibar hissi: Arkadan gelen şık ve belirgin bir ışık süzülmesi */
             box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1), 0 0 35px rgba(255, 183, 3, 0.3);
         }
 
@@ -965,7 +967,7 @@
             margin: 0 auto;
         }
 
-        /* 9. KALIBRIERUNG: Mobil, Tablet & Desktop */
+        /* Responsive Medienabfragen */
         @media (max-width: 1100px) { 
             .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1070,7 +1072,7 @@
         </div>
     </nav>
 
-    <!-- 3. Hero-Bereich -->
+    <!-- 3. Hero-Bereich (Manzara Aydınlatıldı) -->
     <section class="hero-banner" id="hero" role="banner">
         <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
             <span class="meister-tag">Meisterbetrieb | Mitglied der WKO Wien</span>
@@ -1529,10 +1531,10 @@
             <div class="footer-col">
                 <h5>Schnellzugriff</h5>
                 <a href="index.html">Startseite</a>
-                <a href="index.html#services">Leistungen</a>
-                <a href="index.html#areas">Einsatzgebiete</a>
-                <a href="index.html#guide">Kunden-Hilfe</a>
-                <a href="index.html#about">Über uns</a>
+                <a href="#services">Leistungen</a>
+                <a href="#areas">Einsatzgebiete</a>
+                <a href="#guide">Kunden-Hilfe</a>
+                <a href="#about">Über uns</a>
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
                 <a href="kontakt.html">Kontakt</a>
