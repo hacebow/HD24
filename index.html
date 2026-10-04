@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     
+    <!-- Dark Mode'da Bile Sayfayı Beyaz/Aydınlık Tutma -->
+    <meta name="color-scheme" content="light only">
+    
     <!-- Lokale SEO Meta-Tags Österreich -->
     <title>Elektriker Wien & NÖ | HD 24 Elektrotechnik Meisterbetrieb</title>
     <meta name="description" content="HD 24 Elektrotechnik e.U. - Ihr zertifizierter Meisterbetrieb für Wien, NÖ & Burgenland. Elektroinstallation, Blitzschutz, KNX Smart Home, E-Befund nach ÖVE & Störungsdienst.">
-    <meta name="keywords" content="Elektriker Wien, Elektroinstallation Wien, Blitzschutz Wien, Blitzschutzanlagen, Überspannungsschutz, Störungsdienst Wien, E-Befund ÖVE, KNX Smart Home Wien, Zählerkasten Wien, Sprechanlagen, Meisterbetrieb Wien, HD 24 Elektrotechnik, Gastronomie Elektro, Arztpraxis Elektro">
+    <meta name="keywords" content="Elektriker Wien, Elektroinstallation Wien, Blitzschutz Wien, Blitzschutzanlagen, Überspannungsschutz, Störungsdienst Wien, E-Befund ÖVE, KNX Smart Home Wien, Zählerkasten Wien, Sprechanlagen, Meisterbetrieb Wien, HD 24 Elektrotechnik, Gastronomie Elektro, Arztpraxis Elektro, E-Autoladestation, Wallboxen">
     <meta name="author" content="HD 24 Elektrotechnik e.U.">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://elektrotechnik-hd24.at/">
@@ -21,44 +24,7 @@
     <meta property="og:site_name" content="HD 24 Elektrotechnik e.U.">
     <meta property="og:image" content="logo.png">
 
-    <!-- Favicon & Mobile Icons (Google Arama Sonuçları İçin Optimize Edildi) -->
-    <link rel="icon" type="image/png" href="logo.png" sizes="any">
-    <link rel="icon" type="image/png" href="logo.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="logo.png" sizes="48x48">
-    <link rel="icon" type="image/png" href="logo.png" sizes="96x96">
-    <link rel="icon" type="imageGoogle arama sonuçlarında logonun (favicon) görünmemesinin nedeni, ikonların tüm tarayıcı ve Google tarama (bot) standartlarına uygun boyutlandırma etiketleriyle tanımlanmamış olmasıdır. Ayrıca ekran görüntüsündeki arama sonucu ("Alarmanlagen" yazan kısım) Google'ın sitenin eski halini belleğinde (cache) tuttuğunu gösteriyor. 
-
-Faviconların Google aramalarında, telefon ana ekranlarında ve tarayıcı sekmelerinde eksiksiz görünmesi için `<head>` bölümüne Apple, Android, Windows ve Google Search standartlarına tam uyumlu meta etiketlerini ekledim. 
-
-Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.html`, `impressum.html`, `datenschutz.html`) kopyalaman gerekir.
-
-İşte tam optimize edilmiş, eksiksiz `index.html` dosyan:
-
-```html
-<!DOCTYPE html>
-<html lang="de-AT">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    
-    <!-- Lokale SEO Meta-Tags Österreich -->
-    <title>Elektriker Wien & NÖ | HD 24 Elektrotechnik Meisterbetrieb</title>
-    <meta name="description" content="HD 24 Elektrotechnik e.U. - Ihr zertifizierter Meisterbetrieb für Wien, NÖ & Burgenland. Elektroinstallation, Blitzschutz, KNX Smart Home, E-Befund nach ÖVE & Störungsdienst.">
-    <meta name="keywords" content="Elektriker Wien, Elektroinstallation Wien, Blitzschutz Wien, Blitzschutzanlagen, Überspannungsschutz, Störungsdienst Wien, E-Befund ÖVE, KNX Smart Home Wien, Zählerkasten Wien, Sprechanlagen, Meisterbetrieb Wien, HD 24 Elektrotechnik, Gastronomie Elektro, Arztpraxis Elektro">
-    <meta name="author" content="HD 24 Elektrotechnik e.U.">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)">
-
-    <!-- Open Graph (Social Media & WhatsApp Vorschau) -->
-    <meta property="og:locale" content="de_AT">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Elektriker Wien & NÖ | HD 24 Elektrotechnik Meisterbetrieb">
-    <meta property="og:description" content="Zertifizierter Elektrotechnik-Meisterbetrieb in Wien, Niederösterreich und Burgenland. Zuverlässige Elektroinstallationen, Blitzschutzanlagen, KNX und Notdienst.">
-    <meta property="og:url" content="[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)">
-    <meta property="og:site_name" content="HD 24 Elektrotechnik e.U.">
-    <meta property="og:image" content="logo.png">
-
-    <!-- Favicon & Mobile Icons (Google Search & Tüm Cihazlar İçin Tam Uyumlu) -->
+    <!-- Favicon & Mobile Icons -->
     <link rel="icon" href="logo.png" type="image/png">
     <link rel="icon" href="logo.png" sizes="32x32" type="image/png">
     <link rel="icon" href="logo.png" sizes="48x48" type="image/png">
@@ -71,12 +37,12 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
     <!-- Strukturierte Daten nach Schema.org -->
     <script type="application/ld+json">
     {
-      "@context": "[https://schema.org](https://schema.org)",
+      "@context": "https://schema.org",
       "@type": "Electrician",
       "name": "HD 24 Elektrotechnik e.U.",
       "image": "logo.png",
-      "@id": "[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)",
-      "url": "[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)",
+      "@id": "https://elektrotechnik-hd24.at/",
+      "url": "https://elektrotechnik-hd24.at/",
       "telephone": "+436645277706",
       "priceRange": "$$",
       "address": {
@@ -106,7 +72,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
         "closes": "23:59"
       },
       "sameAs": [
-        "[https://www.wko.at](https://www.wko.at)"
+        "https://www.wko.at"
       ],
       "areaServed": [
         "Wien",
@@ -117,8 +83,8 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
     </script>
 
     <!-- Performance Vorabverbindungen & Stile -->
-    <link rel="preconnect" href="[https://unpkg.com](https://unpkg.com)">
-    <link href="[https://unpkg.com/aos@2.3.1/dist/aos.css](https://unpkg.com/aos@2.3.1/dist/aos.css)" rel="stylesheet">
+    <link rel="preconnect" href="https://unpkg.com">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
         :root {
@@ -159,8 +125,9 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
         }
 
         body {
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+            /* Ne olursa olsun beyaz temada kalmasını garanti eder */
+            background-color: var(--bg-light) !important;
+            color: var(--text-dark) !important;
             line-height: 1.6;
             padding-bottom: 70px;
             overflow-x: hidden;
@@ -217,12 +184,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             100% { transform: scale(0.9); opacity: 0.7; box-shadow: 0 0 6px #00f5d4; }
         }
 
-        .topbar-contacts {
-            display: flex;
-            gap: 10px;
-            align-items: center;
-            flex-wrap: wrap;
-        }
+        .topbar-contacts { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
 
         .topbar-btn {
             color: #ffffff;
@@ -283,18 +245,9 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
 
         .brand-logo:hover img { transform: scale(1.03); }
 
-        .nav-right-container {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+        .nav-right-container { display: flex; align-items: center; gap: 12px; }
 
-        .nav-links {
-            display: flex;
-            gap: 4px;
-            align-items: center;
-            list-style: none;
-        }
+        .nav-links { display: flex; gap: 4px; align-items: center; list-style: none; }
 
         .nav-link {
             text-decoration: none;
@@ -307,9 +260,13 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             transition: all 0.2s ease;
         }
 
-        .nav-link:hover {
+        .nav-link:hover, .nav-link.active-link {
             color: var(--primary-red);
             background-color: rgba(217, 4, 41, 0.06);
+        }
+        
+        .nav-link.active-link {
+            border-bottom: 2px solid var(--primary-red);
         }
 
         .nav-cta {
@@ -494,7 +451,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             margin-top: 14px;
         }
 
-        /* 4. LEISTUNGEN - 3 Sütunlu Dengeli Izgara */
+        /* 4. LEISTUNGEN - 3 Sütunlu Dengeli Izgara & Glow Efektleri */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -514,21 +471,24 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
             height: 100%;
             width: 100%;
-            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
         }
 
+        /* Mobilde ve PC'de Her Zaman Parlak Kalsın */
         .service-card::before {
             content: '';
             position: absolute;
             top: 0; left: 0; width: 100%; height: 5px;
             background: linear-gradient(90deg, var(--primary-red), var(--energy-yellow));
             z-index: 5;
+            box-shadow: 0 0 10px rgba(255, 183, 3, 0.6);
         }
 
         .service-card:hover {
             transform: translateY(-8px);
             border-color: rgba(255, 183, 3, 0.75);
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1), 0 0 25px rgba(255, 183, 3, 0.25);
+            /* Sansibar hissi: Arkadan gelen şık ve belirgin bir ışık süzülmesi */
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1), 0 0 35px rgba(255, 183, 3, 0.3);
         }
 
         .service-icon-banner {
@@ -562,6 +522,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             flex-direction: column;
             justify-content: space-between;
             text-align: left;
+            background-color: var(--white);
         }
 
         .service-content h3 {
@@ -590,12 +551,12 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             font-size: 14px;
             display: block;
             margin-top: auto;
-            box-shadow: 0 3px 10px rgba(217, 4, 41, 0.25);
+            box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
             transition: all 0.25s ease;
         }
 
         .btn-card-offer:hover {
-            box-shadow: 0 6px 18px rgba(217, 4, 41, 0.5), 0 0 10px rgba(255, 183, 3, 0.3);
+            box-shadow: 0 6px 18px rgba(217, 4, 41, 0.5), 0 0 15px rgba(255, 183, 3, 0.4);
             transform: translateY(-2px);
         }
 
@@ -952,6 +913,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             text-decoration: none;
             display: block;
             margin-bottom: 10px;
+            transition: color 0.2s;
         }
 
         .footer-col a:hover { color: var(--primary-red); text-decoration: underline; }
@@ -1003,7 +965,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             margin: 0 auto;
         }
 
-        /* 9. KALIBRIERUNG: Mobil, Tablet & Desktop (Perfekt zentriert) */
+        /* 9. KALIBRIERUNG: Mobil, Tablet & Desktop */
         @media (max-width: 1100px) { 
             .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .about-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1066,7 +1028,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
         </div>
         <div class="topbar-contacts">
-            <a href="[https://wa.me/436645277706](https://wa.me/436645277706)" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
+            <a href="https://wa.me/436645277706" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
                 WhatsApp
             </a>
             <a href="mailto:office@hd-24.at" class="topbar-btn" aria-label="E-Mail senden an office@hd-24.at">
@@ -1228,15 +1190,15 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
                     </div>
                 </div>
 
-                <!-- 8. Erneuerbare Energien -->
+                <!-- 8. E-Mobilität & Wallboxen -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="450">
                     <div class="service-icon-banner">
-                        <img src="index-10 (1).webp" alt="Erneuerbare Energien KEBA Wallbox Installation" loading="lazy" decoding="async" style="object-position: center 20%;">
+                        <img src="index-10 (1).webp" alt="E-Mobilität KEBA Wallbox Installation" loading="lazy" decoding="async" style="object-position: center 20%;">
                     </div>
                     <div class="service-content">
                         <div>
-                            <h3>Erneuerbare Energien</h3>
-                            <p>Nachhaltige Photovoltaik-Anlagen und professionelle Wallbox-Installationen (KEBA) für Ihre E-Mobilität.</p>
+                            <h3>E-Mobilität & Wallboxen</h3>
+                            <p>Professionelle Installation von E-Autoladestationen (Wallboxen) für Ihre private oder gewerbliche E-Mobilität.</p>
                         </div>
                         <a href="kontakt.html" class="btn-card-offer">Jetzt Kostenvoranschlag erhalten</a>
                     </div>
@@ -1509,8 +1471,8 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
                         <p>Rechtssichere E-Befunde nach ÖVE/ÖNORM, professionelle Messungen und Videoüberwachung.</p>
                     </div>
                     <div class="about-feature-card">
-                        <h4>Erneuerbare Energien</h4>
-                        <p>Effiziente Photovoltaik-Lösungen und normgerechte KEBA Wallbox-Installationen für E-Mobilität.</p>
+                        <h4>E-Mobilität & Wallboxen</h4>
+                        <p>Professionelle Installation von E-Autoladestationen (Wallboxen) für Ihre private oder gewerbliche E-Mobilität.</p>
                     </div>
                     <div class="about-feature-card">
                         <h4>Rohbau & Betonarbeiten</h4>
@@ -1559,7 +1521,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
                 <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">Service-Bereitschaft</p>
                 <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
                 <a href="mailto:office@hd-24.at" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
-                <a href="[https://wa.me/436645277706](https://wa.me/436645277706)" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
+                <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
                     💬 WhatsApp Chat starten
                 </a>
             </div>
@@ -1567,10 +1529,10 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
             <div class="footer-col">
                 <h5>Schnellzugriff</h5>
                 <a href="index.html">Startseite</a>
-                <a href="#services">Leistungen</a>
-                <a href="#areas">Einsatzgebiete</a>
-                <a href="#guide">Kunden-Hilfe</a>
-                <a href="#about">Über uns</a>
+                <a href="index.html#services">Leistungen</a>
+                <a href="index.html#areas">Einsatzgebiete</a>
+                <a href="index.html#guide">Kunden-Hilfe</a>
+                <a href="index.html#about">Über uns</a>
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
                 <a href="kontakt.html">Kontakt</a>
@@ -1578,7 +1540,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
 
             <div class="footer-col">
                 <h5>WKO & Rechtliches</h5>
-                <a href="[https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024](https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024)" target="_blank" rel="noopener noreferrer">Mitglied der WKO Wien</a>
+                <a href="https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024" target="_blank" rel="noopener noreferrer">Mitglied der WKO Wien</a>
                 <a href="impressum.html" style="margin-top: 8px;">Impressum ansehen</a>
                 <a href="datenschutz.html">Datenschutzerklärung</a>
             </div>
@@ -1597,7 +1559,7 @@ Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.htm
     </footer>
 
     <!-- Skripte für Animationen & mobiles Menü -->
-    <script src="[https://unpkg.com/aos@2.3.1/dist/aos.js](https://unpkg.com/aos@2.3.1/dist/aos.js)"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 750, once: true, offset: 60 });
 
