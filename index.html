@@ -21,19 +21,62 @@
     <meta property="og:site_name" content="HD 24 Elektrotechnik e.U.">
     <meta property="og:image" content="logo.png">
 
-    <!-- Favicon & Mobile Icons -->
-    <link rel="icon" type="image/png" href="logo.png">
+    <!-- Favicon & Mobile Icons (Google Arama Sonuçları İçin Optimize Edildi) -->
+    <link rel="icon" type="image/png" href="logo.png" sizes="any">
+    <link rel="icon" type="image/png" href="logo.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="logo.png" sizes="48x48">
+    <link rel="icon" type="image/png" href="logo.png" sizes="96x96">
+    <link rel="icon" type="imageGoogle arama sonuçlarında logonun (favicon) görünmemesinin nedeni, ikonların tüm tarayıcı ve Google tarama (bot) standartlarına uygun boyutlandırma etiketleriyle tanımlanmamış olmasıdır. Ayrıca ekran görüntüsündeki arama sonucu ("Alarmanlagen" yazan kısım) Google'ın sitenin eski halini belleğinde (cache) tuttuğunu gösteriyor. 
+
+Faviconların Google aramalarında, telefon ana ekranlarında ve tarayıcı sekmelerinde eksiksiz görünmesi için `<head>` bölümüne Apple, Android, Windows ve Google Search standartlarına tam uyumlu meta etiketlerini ekledim. 
+
+Bu kod bloğunu (`<head>` kısmını) sitendeki **tüm sayfalara** (`kontakt.html`, `impressum.html`, `datenschutz.html`) kopyalaman gerekir.
+
+İşte tam optimize edilmiş, eksiksiz `index.html` dosyan:
+
+```html
+<!DOCTYPE html>
+<html lang="de-AT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <!-- Lokale SEO Meta-Tags Österreich -->
+    <title>Elektriker Wien & NÖ | HD 24 Elektrotechnik Meisterbetrieb</title>
+    <meta name="description" content="HD 24 Elektrotechnik e.U. - Ihr zertifizierter Meisterbetrieb für Wien, NÖ & Burgenland. Elektroinstallation, Blitzschutz, KNX Smart Home, E-Befund nach ÖVE & Störungsdienst.">
+    <meta name="keywords" content="Elektriker Wien, Elektroinstallation Wien, Blitzschutz Wien, Blitzschutzanlagen, Überspannungsschutz, Störungsdienst Wien, E-Befund ÖVE, KNX Smart Home Wien, Zählerkasten Wien, Sprechanlagen, Meisterbetrieb Wien, HD 24 Elektrotechnik, Gastronomie Elektro, Arztpraxis Elektro">
+    <meta name="author" content="HD 24 Elektrotechnik e.U.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)">
+
+    <!-- Open Graph (Social Media & WhatsApp Vorschau) -->
+    <meta property="og:locale" content="de_AT">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Elektriker Wien & NÖ | HD 24 Elektrotechnik Meisterbetrieb">
+    <meta property="og:description" content="Zertifizierter Elektrotechnik-Meisterbetrieb in Wien, Niederösterreich und Burgenland. Zuverlässige Elektroinstallationen, Blitzschutzanlagen, KNX und Notdienst.">
+    <meta property="og:url" content="[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)">
+    <meta property="og:site_name" content="HD 24 Elektrotechnik e.U.">
+    <meta property="og:image" content="logo.png">
+
+    <!-- Favicon & Mobile Icons (Google Search & Tüm Cihazlar İçin Tam Uyumlu) -->
+    <link rel="icon" href="logo.png" type="image/png">
+    <link rel="icon" href="logo.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="logo.png" sizes="48x48" type="image/png">
+    <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
+    <meta name="msapplication-TileImage" content="logo.png">
+    <meta name="theme-color" content="#d90429">
 
     <!-- Strukturierte Daten nach Schema.org -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
+      "@context": "[https://schema.org](https://schema.org)",
       "@type": "Electrician",
       "name": "HD 24 Elektrotechnik e.U.",
       "image": "logo.png",
-      "@id": "https://elektrotechnik-hd24.at/",
-      "url": "https://elektrotechnik-hd24.at/",
+      "@id": "[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)",
+      "url": "[https://elektrotechnik-hd24.at/](https://elektrotechnik-hd24.at/)",
       "telephone": "+436645277706",
       "priceRange": "$$",
       "address": {
@@ -63,7 +106,7 @@
         "closes": "23:59"
       },
       "sameAs": [
-        "https://www.wko.at"
+        "[https://www.wko.at](https://www.wko.at)"
       ],
       "areaServed": [
         "Wien",
@@ -74,8 +117,8 @@
     </script>
 
     <!-- Performance Vorabverbindungen & Stile -->
-    <link rel="preconnect" href="https://unpkg.com">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="[https://unpkg.com](https://unpkg.com)">
+    <link href="[https://unpkg.com/aos@2.3.1/dist/aos.css](https://unpkg.com/aos@2.3.1/dist/aos.css)" rel="stylesheet">
 
     <style>
         :root {
@@ -1023,7 +1066,7 @@
             <span>24h Elektriker Service-Bereitschaft aktiv (Wien, NÖ & Burgenland)</span>
         </div>
         <div class="topbar-contacts">
-            <a href="https://wa.me/436645277706" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
+            <a href="[https://wa.me/436645277706](https://wa.me/436645277706)" target="_blank" class="topbar-btn whatsapp-btn" aria-label="WhatsApp Nachricht senden">
                 WhatsApp
             </a>
             <a href="mailto:office@hd-24.at" class="topbar-btn" aria-label="E-Mail senden an office@hd-24.at">
@@ -1516,17 +1559,9 @@
                 <p style="margin-bottom: 5px; font-size: 13px; color: #adb5bd;">Service-Bereitschaft</p>
                 <a href="tel:+436645277706" class="footer-phone-link">📞 +43 664 5277706</a>
                 <a href="mailto:office@hd-24.at" style="margin-top: 8px; margin-bottom: 12px;">✉ office@hd-24.at</a>
-                <a href="https://wa.me/436645277706" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
+                <a href="[https://wa.me/436645277706](https://wa.me/436645277706)" target="_blank" class="footer-whatsapp-btn" aria-label="WhatsApp Chat starten">
                     💬 WhatsApp Chat starten
                 </a>
-            </div>
-
-            <div class="footer-col">
-                <h5>WKO & Rechtliches</h5>
-                <a href="https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024" target="_blank" rel="noopener noreferrer">Mitglied der WKO Wien</a>
-                <a href="https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024" target="_blank" rel="noopener noreferrer">Landesinnung Elektrotechnik</a>
-                <a href="impressum.html" style="margin-top: 8px;">Impressum ansehen</a>
-                <a href="datenschutz.html">Datenschutzerklärung</a>
             </div>
 
             <div class="footer-col">
@@ -1539,6 +1574,13 @@
                 <a href="impressum.html">Impressum</a>
                 <a href="datenschutz.html">Datenschutz</a>
                 <a href="kontakt.html">Kontakt</a>
+            </div>
+
+            <div class="footer-col">
+                <h5>WKO & Rechtliches</h5>
+                <a href="[https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024](https://firmen.wko.at/hd-24-eu/wien/?firmaid=d8f869c3-574c-4a3e-9a79-420b07365365&standortid=31&standortname=wien%2021.%20bezirk%20%28floridsdorf%29&suchbegriff=hd%2024)" target="_blank" rel="noopener noreferrer">Mitglied der WKO Wien</a>
+                <a href="impressum.html" style="margin-top: 8px;">Impressum ansehen</a>
+                <a href="datenschutz.html">Datenschutzerklärung</a>
             </div>
 
             <div class="footer-col">
@@ -1555,7 +1597,7 @@
     </footer>
 
     <!-- Skripte für Animationen & mobiles Menü -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="[https://unpkg.com/aos@2.3.1/dist/aos.js](https://unpkg.com/aos@2.3.1/dist/aos.js)"></script>
     <script>
         AOS.init({ duration: 750, once: true, offset: 60 });
 
