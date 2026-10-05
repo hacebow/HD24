@@ -24,13 +24,10 @@
     <meta property="og:site_name" content="HD 24 Elektrotechnik e.U.">
     <meta property="og:image" content="logo.png">
 
-    <!-- Favicon & Mobile Icons -->
+    <!-- Universal Favicon & Mobile Icons -->
     <link rel="icon" href="logo.png" type="image/png">
-    <link rel="icon" href="logo.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="logo.png" sizes="48x48" type="image/png">
-    <link rel="icon" href="logo.png" sizes="192x192" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
     <link rel="apple-touch-icon" href="logo.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="logo.png">
     <meta name="msapplication-TileImage" content="logo.png">
     <meta name="theme-color" content="#d90429">
 
@@ -125,7 +122,6 @@
         }
 
         body {
-            /* Ne olursa olsun beyaz temada kalmasını garanti eder */
             background-color: var(--bg-light) !important;
             color: var(--text-dark) !important;
             line-height: 1.6;
@@ -307,14 +303,13 @@
             border-radius: 2px;
         }
 
-        /* 3. Hero-Bereich (Manzara Aydınlatıldı) */
+        /* 3. Hero-Bereich */
         .hero-banner {
             min-height: 82vh;
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 60px 6%;
-            /* Filtre opaklığı 0.95'ten 0.8'e, 0.9'dan 0.65'e düşürüldü */
             background: linear-gradient(135deg, rgba(11, 9, 10, 0.65), rgba(21, 25, 28, 0.8)), 
                         url('viyanaart.jpg') no-repeat center center/cover;
             color: var(--white);
@@ -351,7 +346,6 @@
             margin-bottom: 20px;
             word-wrap: break-word;
             max-width: 850px;
-            /* Aydınlık arka planda okunması için güçlü gölge eklendi */
             text-shadow: 0 2px 15px rgba(0,0,0,0.8);
         }
 
@@ -408,7 +402,7 @@
             box-shadow: 0 0 20px rgba(255, 183, 3, 0.5);
         }
 
-        /* Standart Bölüm Kapsayıcıları (Ortalanmış) */
+        /* Standart Bölüm Kapsayıcıları */
         .section-wrap { 
             padding: 85px 5%; 
             width: 100%; 
@@ -455,7 +449,7 @@
             margin-top: 14px;
         }
 
-        /* 4. LEISTUNGEN - 3 Sütunlu Dengeli Izgara & Glow Efektleri */
+        /* 4. LEISTUNGEN */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -562,7 +556,7 @@
             transform: translateY(-2px);
         }
 
-        /* 5. EINSATZGEBIETE - Tam Simetrik 2x2 Izgara */
+        /* 5. EINSATZGEBIETE */
         .areas-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -623,7 +617,7 @@
             border-left: 3.5px solid var(--energy-yellow);
         }
 
-        /* 6. LEITFADEN & NOTFALL (Simetrik 2 Kolon) */
+        /* 6. LEITFADEN & NOTFALL */
         .guide-layout { 
             display: grid; 
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1072,7 +1066,7 @@
         </div>
     </nav>
 
-    <!-- 3. Hero-Bereich (Manzara Aydınlatıldı) -->
+    <!-- 3. Hero-Bereich -->
     <section class="hero-banner" id="hero" role="banner">
         <div class="hero-content" data-aos="fade-right" data-aos-duration="800">
             <span class="meister-tag">Meisterbetrieb | Mitglied der WKO Wien</span>
@@ -1181,7 +1175,7 @@
                 <!-- 7. Kommunikation & EDV -->
                 <div class="service-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="service-icon-banner">
-                        <img src="kommunikation.webp" alt="Kommunikation Netzwerktechnik und Verteiler" loading="lazy" decoding="async">
+                        <img src="Kommunikation.webp" alt="Kommunikation Netzwerktechnik und Verteiler" loading="lazy" decoding="async">
                     </div>
                     <div class="service-content">
                         <div>
